@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <!-- 8431 -->
+  <!-- 9519 -->
   <head>
     <meta charset="utf-8">
     <title>Kill Math: Notes</title>
@@ -1187,19 +1187,18 @@
 
 	Now, let's suppose that you don't know a whole lot about
 	number theory.  Maybe you're a high-school student.  But it
-	just happens that you've had a teacher who has helped you
-	really master
+	just happens that you've really mastered
 	the <a href="http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic">fundamental
 	theorem of arithmetic</a>, that is, the idea that every
 	integer can be uniquely represented as a product of prime
-	numbers.  It's not just the case that you've state and proved
-	the theorem, you've actively applied it in many different
-	circumstances.  If that's the case then it quickly becomes
+	numbers.  It's not just the case that understand the statement
+	and proof of the theorem, you've actively applied it in many
+	different circumstances.  If that's the case then it becomes
 	second nature to try to apply it to problems involving
-	integers, multiplication, and divisibility.  Sometimes, that
-	means turning everything in the problem into an integer, which
-	we can do by squaring the equation above, and moving $n$ to
-	the left-hand side,
+	integers, multiplication, and divisibility.  You also tend to
+	notice when it's possible to turn everything in the problem
+	into an integer, which we can do by squaring the equation
+	above, and moving $n$ to the left-hand side,
 
 	\begin{eqnarray}
 	2 n^2 = m^2.
@@ -1215,19 +1214,23 @@
       </p>
 
       <p>
-	If only know a little number theory, but just happen to have
-	mastered the fundamental theorem of arithmetic, then proving
-	the square root of $2$ is irrational is very nearly the kind
-	of thing you can see in flash of insight.  I have verbally
-	explained the above proof to people in less than $30$ seconds,
-	only to have them cut me off with an exclamation of "Oh, I
-	see!"  But someone who happens not to have mastered the
+	If you only know a little number theory, but just happen to
+	have mastered the fundamental theorem of arithmetic, then
+	proving the square root of $2$ is irrational is very nearly
+	the kind of thing you can see in flash of insight.  I have
+	verbally explained the above proof to people in less than $30$
+	seconds, only to have them cut me off with an exclamation of
+	"Oh, I see!"  But someone who happens not to have mastered the
 	fundamental theorem (but otherwise has a comparable
-	background) may have a much tougher time.
+	background) is likely to have a much tougher time seeing why
+	the result is true.  Certainly, the proofs I saw as a student
+	were rather more cumbersome, in part because they didn't
+	assume knowledge of the fundamental theorem of arithmetic.
       </p>
 
       PPP --- tonally there's something not quite right in the last
-      para.  These are people who already know the proof!
+      para.  These are people who already know the proof!  What is
+      making
 
       <p>
 	Of course, it is perfectly possible for someone to have
@@ -1336,29 +1339,29 @@
       <p>
 	Let me give an example.  It's not what we'd usually call a
 	theorem, but it's a very simple example of the sort of
-	connection often made in theorems.  In particular, it
-	illustrates how the value of $\sin(\theta)$ is just the $y$
-	co-ordinate for a point on a unit circle at an angle $\theta$
-	from the horizontal axis.
+	connection often made in theorems.  It illustrates how the
+	value of $\sin(\theta)$ is just the $y$ co-ordinate for a
+	point on a unit circle at an angle $\theta$ from the
+	horizontal axis.  Try clicking and dragging to adjust the
+	angle on either side of the frame.  Or click "Start" to see
+	how the behaviour changes as $\theta$
+	changes<span class="marginnote">This design is not mine; many
+	variations on this idea have been developed. I do not know the
+	origin.</span>.
       </P>
       
-      <center>
+      <p>
 	<button id="startSineAnimation" 
-		onclick="startSineAnimation()">Start animation</button>
-      </center>
+		onclick="startSineAnimation()">Start</button>
+	<button id="stopSineAnimation"
+		onclick="stopSineAnimation()"
+		style="display: none">Stop</button>
 
       <canvas id="sine" height="200" width="600"></canvas>
       <script src="sine.js"></script>
 
-      <p>PPP: Tell the story in several parts.  Make it possible to
-      drag on one side, and have it reflected on the other.  Make it
-      so we have an animated and non-animated option.  Make pi/2, pi,
-      3 pi/ 2, on both sides.  Make it so we can click to there.
-      Basically, work through an iteration, making various
-      improvements.
-      
       <p>
-	PPP: I've done this as a form of <em>explanation</em>.  That's
+	There are many PPP: I've done this as a form of <em>explanation</em>.  That's
 	valuable, but it's not really quite right.  Part of the
 	problem is that it's too low a level.  A much more useful
 	thing would be at a higher level.  An example to give the
@@ -1367,6 +1370,20 @@
 	interface?  What we really want is it as <em>part of an
 	environment in which to think and create</em>.  And I can't
 	show that at this point.
+
+	What you want is to <em>see what we know</em> about different
+	objects.
+
+      <p>
+	Part of the trouble is that we <em>know so much</em>.  Suppose
+	we write $n$ to denote an integer.  Well, there's rather a lot
+	we know about the integers.  
+
+      <p>This, incidentally, may be a major advantage of 3d
+      environments, like that provided by the Oculus Rift.  Having 3
+      spatial dimensions dramatically expands the available space.  It
+      should become possible to make much larger quantities of
+      information easily information, and to present richer cues.
 
 	(The context here is strange.)
 
