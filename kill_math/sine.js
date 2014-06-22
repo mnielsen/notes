@@ -1,61 +1,53 @@
+// Visualizing the relationship between a point on a circle and the
+// sine function.
+
+// Setup the globals
 var canvas = document.getElementById("sine");
 var ctx = canvas.getContext("2d");
 var theta = 0.4;
-var animateFlag = false;
-redraw();
+var animateFlag = false; // Is the animation running?
+var changingPolar = false; // Are we mousemoving, having mousedowned on the LHS
+var changingLinear = false; // Ditto, but on the RHS
 
-function redraw() {
-    canvas.width = canvas.width;
-    setupCanvas();
-    plot(theta);
+// Add line method to canvas context objects
+CanvasRenderingContext2D.prototype.line = function(
+    x1, y1, x2, y2, color, lineWidth) {
+    this.beginPath();
+    this.moveTo(x1, y1);
+    this.lineTo(x2, y2);
+    if (typeof color !== 'undefined') {
+	this.strokeStyle = color;
+    }
+    if (typeof lineWidth !== 'undefined') {
+	this.lineWidth = lineWidth;
+    }
+    this.stroke();
 }
 
-function setupCanvas() {
-    // Draw all the pieces that don't change
+redraw();
 
-    // top line
-    ctx.beginPath();
-    ctx.moveTo(0, 15.5);
-    ctx.lineTo(600, 15.5);
-    ctx.strokeStyle = "#ccc";
-    ctx.stroke();
+function redraw() { // clears the canvas and redraws it
+    canvas.width = canvas.width;
+    drawStaticElements();
+    drawAnimatedElements();
+}
 
-    // mid line
-    ctx.beginPath();
-    ctx.moveTo(0, 100);
-    ctx.lineTo(600, 100);
-    ctx.stroke();
+function drawStaticElements() {
+    // top, middle and bottom horizontal lines
+    ctx.line(0, 15.5, 600, 15.5, "#ccc");
+    ctx.line(0, 100, 600, 100);
+    ctx.line(0, 184.5, 600, 184.5);
 
-    // bottom line
-    ctx.beginPath();
-    ctx.moveTo(0, 184.5);
-    ctx.lineTo(600, 184.5);
-    ctx.stroke();
+    // line separating LHS and RHS
+    ctx.line(250, 15.5, 250, 184.5, "black", "2px");
 
     // circle
     ctx.beginPath();
     ctx.arc(105, 100, 84.5, 0, Math.PI*2, true);
+    ctx.lineWidth = "1px";
+    ctx.strokeStyle = "#ccc";
     ctx.closePath();
     ctx.stroke();
-
-    // line separating the two halves
-    ctx.beginPath();
-    ctx.moveTo(250, 15.5);
-    ctx.lineTo(250, 184.5);
-    ctx.lineWidth = "2px";
-    ctx.strokeStyle = "black";
-    ctx.stroke();
-
-    // top label
-    ctx.font = "14px Arial";
-    ctx.textAlign = "center";
-    ctx.fillText("1.0", 250, 13);
-    
-    // middle label
-    ctx.fillText("0.0", 237, 113);
-
-    // bottom label
-    ctx.fillText("-1.0", 250, 200);
 
     // middle dot
     ctx.beginPath();
@@ -63,32 +55,28 @@ function setupCanvas() {
     ctx.closePath();
     ctx.fillStyle = "#888";
     ctx.fill();
+
+    // labels
+    ctx.font = "14px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText("1.0", 250, 13);
+    ctx.fillText("0.0", 237, 113);
+    ctx.fillText("-1.0", 250, 200);
 }
 
-function plot(theta) {
-    // Plot the animated elements
-
+function drawAnimatedElements() {
     // Number of points to plot
     var n = Math.round(100 * theta / Math.PI + 1)
 
     // plot the radius
-    ctx.beginPath();
-    ctx.moveTo(105, 100);
     var x = 105+84.5*Math.cos(theta);
     var y = 100-84.5*Math.sin(theta);
-    ctx.lineTo(x, y);
-    ctx.strokeStyle = "#ccc";
-    ctx.stroke();
-
+    ctx.line(105, 100, x, y, "#ccc", "1px");
 
     // plot the vertical line
-    ctx.beginPath();
-    ctx.moveTo(x, 100);
-    ctx.lineTo(x, y);
-    ctx.strokeStyle = "red";
-    ctx.stroke();
+    ctx.line(x, 100, x, y, "red", "1px");
 
-    // plot the arc
+    // plot the arc representing the angle
     ctx.beginPath();
     ctx.moveTo(125, 100);
     ctx.arc(105, 100, 20, 0, -theta, true);
@@ -96,12 +84,7 @@ function plot(theta) {
     ctx.stroke();
 
     // plot the connecting line
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(250 + (350*theta) / (2*Math.PI),
-	       100-84.5*Math.sin(theta));
-    ctx.strokeStyle = "#eee";
-    ctx.stroke();
+    ctx.line(x, y, RHS(theta).x, RHS(theta).y, "#eee", "1px");
 
     // plot the endpoint
     ctx.beginPath();
@@ -110,35 +93,30 @@ function plot(theta) {
     ctx.fillStyle = "red";
     ctx.fill();
 
-
-
-    // plot the sine curve to date
-    var phi;
-    x = 250;
-    y = 100;
-    var newX, newY;
-    ctx.strokeStyle = "red";
+    // plot the sine curve
+    var phi, newX, newY;
+    pos = {"x": 250, "y": 100};
     for (var j = 1; j <= n; j++) {
 	phi = j * theta/n;
-	newX = 250 + (350 * phi) / (2*Math.PI);
-	newY = 100 - 84.5*Math.sin(phi);
-	ctx.beginPath();
-	ctx.moveTo(x, y);
-	ctx.lineTo(newX, newY);
-	ctx.stroke();
-	x = newX;
-	y = newY;
+	newPos = RHS(phi);
+	ctx.line(pos.x, pos.y, newPos.x, newPos.y, "red", "1px");
+	pos = newPos;
     }
     
     // plot the endpoint on the sine curve
     ctx.beginPath();
-    ctx.arc(250+(350*theta)/(2*Math.PI),
-	    100-84.5*Math.sin(theta), 
-	    5, 0, 2*Math.PI, true);
+    ctx.arc(RHS(theta).x, RHS(theta).y, 5, 0, 2*Math.PI, true);
     ctx.fillStyle = "red";
     ctx.fill();
-}
 
+    function RHS(alpha) { // Returns x, y coords on RHS
+	return {
+	    "x": 250+(350*alpha)/(2*Math.PI),
+	    "y": 100-84.5*Math.sin(alpha)
+	}
+    }
+
+}
 
 function startSineAnimation() {
     // Handler for the start button
@@ -167,15 +145,11 @@ function animate() {
     }
 }
 
-
-
-var changingPolar = false, changingLinear = false;
-
 $("#sine").mousedown(function(e) {
-    if (sineMousePosition(e).x < 250) {
+    if (sineMousePosition(e).x < 250) { // handler for mousedown on LHS
 	changingPolar = true;
 	updatePolar(e);
-    } else {
+    } else { // handler for mousedown on RHS
 	changingLinear = true;
 	updateLinear(e);
     }
@@ -226,6 +200,14 @@ function updateLinear(e) {
     redraw();
 }
 
+function sineMousePosition(e) {
+    // Return the position within the #sine canvas.
+    return {
+	"x": e.pageX - $("#sine").offset().left,
+	"y": e.pageY - $("#sine").offset().top
+	}
+}
+
 Number.prototype.limit = function(a, b) {
     // Assumes a < b.  Returns the number if it's within the range a
     // to b, otherwise returns the smaller or larger endpoint, as
@@ -234,12 +216,3 @@ Number.prototype.limit = function(a, b) {
     if (this.valueOf() > b) {return b}
     return this.valueOf();
 }
-
-function sineMousePosition(e) {
-    // Return the position within the #sine canvas.
-    return {
-	"x": e.pageX - $("#sine").offset().left,
-	"y": e.pageY - $("#sine").offset().top
-	}
-}
-    
