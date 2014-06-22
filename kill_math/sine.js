@@ -196,7 +196,7 @@ function updatePolar(e) {
 }
 
 function updateLinear(e) {
-    theta = ((sineMousePosition(e).x-250)*2*Math.PI/350).limit(0, 2*Math.Pi);
+    theta = ((sineMousePosition(e).x-250)*2*Math.PI/350).limit(0, 2*Math.PI);
     redraw();
 }
 
