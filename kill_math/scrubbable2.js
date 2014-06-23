@@ -19,6 +19,10 @@ function updateAnswer2() {
     var answer = contents.n1+contents.n2+contents.n3 * contents.n4 +
 	    contents.n5*contents.n6;
     $("#answer2")[0].textContent = answer.toString();
+
+    answer = Math.round(
+	Math.pow(1.01, 20)* parseInt($("#n3Child2Content")[0].textContent));
+    $("#answer3")[0].textContent = answer.toString();
 }
 
 function initScrubbableNumbers2() {
