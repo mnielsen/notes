@@ -243,7 +243,7 @@
 	examples that Victor creates.  The first is a video
 	demonstrating a medium for understanding difference equations.
 	The video is best watched fullscreened, which can be done by
-	clicking the four-arrow icon <img src="vimeo.JPG"
+	clicking the four-arrow icon <img src="images/vimeo.JPG"
 	style="vertical-align: text-bottom;"/> in the bottom right of
 	the video player: <br/>
 	<iframe src="http://player.vimeo.com/video/85480838?portrait=0" 
@@ -258,10 +258,25 @@
 	difference equations; and the language for searching over
 	functions.  [Bret Victor has] created a vocabulary of
 	operations which can be used to understand and manipulate and,
-	most crucially of all, <em>play</em> with difference
-	equations.  And with enough exposure to this medium, we'd
-	begin internalizing these operations: we'd begin to think
-	about difference equations in this way."
+	most crucially of
+	all, <em>play</em>*<span class="marginnote">* There is a
+	<a href="https://www.youtube.com/watch?v=Zkx1aKv2z8o">beautiful
+	talk</a> by <a href="http://acko.net/about/">Stephen
+	Wittens</a> where he talks about (and demonstrates) how
+	powerful play can be in mathematics.  You can see this too in
+	Seymour
+	Papert's <a href="http://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746">Mindstorms</a>.
+	My experience when learning a new area of mathematics is that
+	there is often a long period of time in which working with it
+	is a painful slog.  The simplest things are very difficult to
+	do.  But after many hours you go past some sort of threshold.
+	Things begin to speed up, and it becomes very enjoyable to
+	work with the objects in your new domain; you become able to
+	play.  Well-designed new media may speed up this process of
+	getting-to-play.</span> with difference equations.  And with
+	enough exposure to this medium, we'd begin internalizing these
+	operations: we'd begin to think about difference equations in
+	this way."
       </p>
 
       <p>
@@ -795,7 +810,7 @@
       </p>
 
       <p>
-	Is there some way in which <em>Mathematica</em> does change
+	Are there any ways in which <em>Mathematica</em> does change
 	what we think mathematics is?  Well, <em>Mathematica</em> does
 	introduce several new fundamental objects and operations into
 	mathematics.  In particular, graphs, animations, and notebooks
@@ -820,34 +835,34 @@
       </p>
       
       <p>
-	What we'd really like is for these new objects to be data
-	structures with a beautiful, clean, and powerful interface,
-	one that integrates well with the rest
-	of <em>Mathematica</em>.  Ideally, it should be possible to
-	programmatically reason about these objects.  For instance,
-	with a well-designed interface it ought to be trivial to say
-	things like: plot this graph over many random choices of
-	such-and-such parameters, and find the version of the graph
-	which shows the greatest divergence in behaviour between these
-	two quantities of interest.  Or to say: contrast the
-	complexity of underlying reasoning used in two different
+	Ideally, these new objects will be data structures with a
+	beautiful, clean, and powerful interface, one that integrates
+	well with the rest of <em>Mathematica</em>, and makes it
+	possible to programmatically reason about these objects.  For
+	instance, with a well-designed interface it ought to be
+	trivial to say things like: plot this graph over many random
+	choices of such-and-such parameters, and find the version of
+	the graph which shows the greatest divergence in behaviour
+	between these two quantities of interest.  Or to say: contrast
+	the complexity of underlying reasoning used in two different
 	notebooks (say, two different proofs of the same theorem).  Or
 	to say: pipe the output from these two notebooks into this
-	other notebook.  And so on.  Broadly speaking, as designers we
-	want to ask the questions: <em>What new classes of object can
-	we introduce?</em> <em>What are powerful operations that could
-	be performed on these objects?</em> And: <em>Are there
-	powerful new data structures we can build from these objects
-	(and associated operations on those data structures).</em>
-	When we do this we make it possible to think in powerful ways
-	about these new objects.  We are, in a real way, enlarging the
-	space of thoughts we can think*<span class="marginnote">*
-	Incidentally, there is another class of new objects added
-	in <em>Mathematica</em>.  That's <em>very large
-	expressions</em>.  100 years ago it was not practical for a
-	mathematician to deal with an expression involving 10,000
-	terms, unless there was some regularity that enabled a way of
-	dealing with many terms at once.  Certainly, one couldn't
+	other notebook.  And so on.  Broadly speaking, as designers of
+	such a system we want to ask questions like: <em>What new
+	classes of object can we introduce?</em> <em>What are powerful
+	operations that could be performed on these objects?</em>
+	And: <em>Are there powerful new data structures we can build
+	from these objects (and associated operations on those data
+	structures)?</em>  When we do this we make it possible to
+	think in powerful ways about these new objects.  We are, in a
+	real way, enlarging the space of thoughts we can
+	think*<span class="marginnote">* Incidentally, there is
+	another class of new objects added in <em>Mathematica</em>,
+	beyond notebooks, graphs, and animations.  That's <em>very
+	large expressions</em>.  100 years ago it was not practical
+	for a mathematician to deal with an expression involving
+	10,000 terms, unless there was some regularity that enabled
+	them to deal with many terms at once.  Certainly, one couldn't
 	treat such an expression as a single object which can be
 	manipulated in powerful ways.  Nowadays, it is routine to deal
 	with such expressions, and there are powerful operations which
@@ -859,24 +874,24 @@
 
       <p>
 	Now, I'm not a <em>Mathematica</em> guru, but my impression is
-	that this is not quite what's happened.  Many of these things
-	are in principle possible in <em>Mathematica</em>.  But that
-	doesn't mean they are always easy and natural.  For example,
-	you'd like for it to be trivially easy to inspect, manipulate
-	and reason about the contents of <em>Mathematica</em>
-	notebooks, having powerful tools to access things like the
-	parse trees and the chains of transformation rules used
-	by <em>Mathematica</em> to solve problems.  That may well be
-	possible &ndash; I don't know enough
-	about <em>Mathematica</em> to be sure.  But my experience
-	with <em>Mathematica</em> suggests that it's certainly not
-	what the system was designed to do.  With that said, the
-	system has gradually evolved in this direction, with these new
-	objects and operations gradually becoming more powerful,
-	becoming more and more first class mathematical citizens.
-	However, it does not appear to have been a high priority to
-	push the design of those new objects and operations, nor to
-	make them central to the system.
+	that the ideal described in the last paragraph isn't quite
+	what's happened.  Many of these things are in principle
+	possible in <em>Mathematica</em>.  But that doesn't mean they
+	are always easy and natural.  For example, you'd like for it
+	to be trivially easy to inspect, manipulate and reason about
+	the contents of <em>Mathematica</em> notebooks, having
+	powerful tools to access things like the parse trees and the
+	chains of transformation rules used by <em>Mathematica</em> to
+	solve problems.  That may well be possible &ndash; I don't
+	know enough about <em>Mathematica</em> to be sure.  But my
+	experience with <em>Mathematica</em> suggests that it's
+	certainly not what the system was designed to do.  With that
+	said, the system has gradually evolved in this direction, with
+	these new objects and operations gradually becoming more
+	powerful, and moving toward becoming first class mathematical
+	citizens.  However, it does not appear to have been a high
+	priority to push the design of those new objects and
+	operations, nor to make them central to the system.
       </p>
 
       <p>
@@ -898,8 +913,10 @@
       <p>
 	By contrast, the prototypes in <em>Kill Math</em> look to me
 	like what you get when a very competent and creative designer
-	starts designing systems for doing mathematics.  Think about
-	some of the operations we have:
+	starts designing systems for doing mathematics.  What's at
+	issue is, in fact, the fundamental objects, operations and
+	representations that we have.  Think about some of the
+	operations introduced in the prototypes above:
       </P>
 
       <p>
@@ -919,29 +936,55 @@
 	These operations are, in turn, associated to new fundamental
 	objects, such as tied numbers, and search expressions for the
 	graph, as well as redefining the way we think about old
-	objects: scrubbing a number creates a different relationship
-	to the number than does typing it out.  In particular,
-	scrubbing enables new kinds of exploration and play.  That may
-	sound like an exaggeration, but I don't think it is.  Imagine
-	you are playing a first-person shooter game, but instead of
-	directly controlling the motion, you instead repeatedly have
-	to type in an angle describing the direction you are facing.
-	This would change your relationship to the character, and not
-	just in the obvious sense that it would slow down the rate at
-	which you could control the character; it would change the
-	sense of control, and give you much less visceral feedback.
-      </p>
-
+	objects: a scrubbable number is <em>not</em> the same as an
+	ordinary number, in important ways.  In particular, scrubbing
+	enables new kinds of exploration and play.  That may sound
+	like an exaggeration, and perhaps it is when we're dealing
+	with very simple prototypes, but as the prototypes become more
+	sophisticated I this it makes more and more sense to think of
+	scrubbable numbers as truly a different type of object.
+	Imagine you are playing a first-person shooter game, but
+	instead of directly controlling the motion, you instead
+	repeatedly have to type in an angle describing the direction
+	you're facing.  This would change your relationship to the
+	character, and not just in the obvious sense that it would
+	slow down the rate at which you could control the character;
+	it would change the sense of control, and give you much less
+	visceral feedback.  Scrubbable numbers point the way toward
+	a different relationship with numbers.
 
       <p>
-	To sum up, <em>Kill Math</em> differs
-	from <em>Mathematica</em> in focussing on identifying new
-	types of mathematical object, new representations (both for
-	new and old objects), and new operations (again, both for new
-	an old objects).  All this happens to some extent
-	in <em>Mathematica</em>, but it is not the focus in the same
-	way as it is <em>Kill Math</em>.
-      </p>
+	This sounds very wishy-washy and touchy-feely.  Yet I think
+	it's at the heart of what it means to understood
+	something. Littlewood is supposed*<span class="marginnote">*
+	The story is amusing. Littlewood was reading the proofs of
+	some remarks by Hardy on Ramanujan: "as someone said, each of
+	the positive integers [etc]".  Littlewood responded: "I
+	wondered who said that; I wish I had".  In the final version
+	it read "it was Littlewood who said...".  There is more to the
+	story, which is told in Littlewood's
+	beautiful <a href="http://en.wikipedia.org/wiki/A_Mathematician's_Miscellany">Miscellany</a>.</span>
+	to have remarked that "every positive integer is one of
+	Ramanjuan's personal friends".  That's a statement about the
+	relationship Ramanujan had with the integers.
+	
+
+      <p>
+	Returning to <em>Kill Math</em>, and to sum up, where it
+	differs from <em>Mathematica</em> is in focussing on
+	identifying new types of mathematical object, new
+	representations (both for new and old objects), and new
+	operations (again, both for new and old objects).  All this
+	happens to some extent in <em>Mathematica</em>, but it is not
+	the design goal in the same way as in <em>Kill Math</em>.
+	Rather, I believe <em>Mathematica</em>'s core focus is
+	on <em>outsourcing cognition</em>: doing the kind of cognitive
+	tasks mathematicians have always done, but much faster, and
+	more reliably.  The expansion of what mathematics is is a more
+	incidental goal.  Both goals are, of course, very
+	worthwhile; <em>Mathematica</em> (and systems like it) are,
+	for the time being, much more mature.  It is interesting to
+	consider the possibility of some future system
 
       <p>
 	<strong>A parenthetical remark on notebooks:</strong> The
@@ -961,16 +1004,17 @@
 	results, which can provoke questions, and provide a relatively
 	easy way for a person to then answer those questions.  In
 	other words, it's creating a genuine experience of non-trivial
-	mathematical ideas.  That's something that only a tiny
-	fraction of the population have ever experienced.  Now, a
-	similar experience could have been created with 19th century
-	tools.  But it would have been pretty darn difficult to
-	achieve, and hard to scale the experience.
-	With <em>Mathematica</em> or a tool like ipython it becomes
-	much easier.  It's not yet trivial, though, since while
-	playing with short Python scripts is easier than conventional
-	mathematical modelling, it's still a relatively difficult
-	intellectual activity.
+	mathematical ideas; an experience of being able
+	to <em>play</em> with them, in the terminology I used earlier.
+	That's something that only a tiny fraction of the population
+	have ever experienced.  Now, a similar experience could have
+	been created with 19th century tools.  But it would have been
+	pretty darn difficult to achieve, and hard to scale the
+	experience.  With <em>Mathematica</em> or a tool like ipython
+	it becomes much easier.  It's not yet trivial, though, since
+	while playing with short Python scripts is easier than
+	conventional mathematical modelling, it's still a relatively
+	difficult intellectual activity.
       </p>
 
 
@@ -993,23 +1037,264 @@
 
       <p>
 	There are, of course, many systems for exploring mathematics
-	that I haven't listed above.  Think of Haskell, Coq, Wolfram
-	Alpha, D3, R, Julia, Logo, Scratch, and others.  All of these
+	that I haven't listed above.  Think of Coq, Wolfram Alpha, D3,
+	R, Julia, Logo, Scratch, Haskell, and others.  All of these
 	are, in their own ways, different to both <em>Kill Math</em>
 	and <em>Mathematica</em>*<span class="marginnote">* Wolfram
 	Alpha is an extension of <em>Mathematica</em>, but is
 	fundamentally different in enough ways that it requires a
-	separate analysis.</span>, and require their own analyses.  I
-	am not yet sufficiently familiar with these systems that I'll
-	make a detailed commentary. I will, however, note that these
-	systems also add new first-class objects and operations.  In
-	particular, they reify data sets and proofs: these become
-	things that can be inspected, manipulated, and related to
-	other objects.  However, I do not know to what extent this
-	sort of extension is the raison d'être of these systems, and
-	to what extent it's simply an unintended accident.
-      </p>
+	separate analysis.  The same seems likely to be true of
+	Wolfram's new programming language, which I have not yet
+	looked at in any detail.</span>, and require their own
+	analyses.  I am not yet sufficiently familiar with these
+	systems that I'll attempt a detailed commentary. I will,
+	however, note that these systems also add new first-class
+	objects and operations.  In particular, they reify data sets
+	and proofs: these become things that can be inspected,
+	manipulated, and related to other objects.  However, I do not
+	know to what extent this sort of extension is the raison
+	d'être of these systems, and to what extent it's simply an
+	an unintended consequence of other design decisions.
+
+      <h2>Moving theorems into the user interface</h2>
+
       
+      <p>
+	Theorems express surprising connections between mathematical
+	concepts.  Think of the way the fundamental theorem of
+	arithmetic connects the positive integers to the primes.  Or
+	the way the Cauchy-Schwarz inequality connects inner products
+	and lengths.  The information the Sylow theorems give us about
+	the size of subgroups of a finite group.  The fundamental
+	theorem of algebra tells us that there is a root for every
+	non-trivial polynomial over the complex numbers (or,
+	equivalently, that such a polynomial can be factored into
+	monomials).  And so on.  Ideally, such connections should
+	be <em>made visible</em> through the user interface.  That is
+	we should <em>move theorems into the user interface</em>.
+	Tipping it upside down, we can view theorems as challenges to
+	develop a user interface which reifies those theorems in a
+	powerful way, cueing the user as necessary.  Ideally, the
+	representation used to denote mathematical objects will in
+	fact suggest the relationships in question.
+
+      <p>
+	Knuth <a href="http://www.jstor.org/discover/10.2307/2318994">once
+	said</a>:
+      </p>
+
+      <blockquote>
+	<em>I have been impressed by numerous instances of
+	mathematical theories that are really about particular
+	algorithms; these theories are typically formulated in
+	mathematical terms that are much more cumbersome and less
+	natural than the equivalent formulation today's computer
+	scientists would use.</em>
+      </blockquote>
+
+      <p>
+	We can go much further.  Theorems are traditionally presented
+	as static statements about the relationship between
+	mathematical objects.  But that static nature is a consequence
+	of historical accidents about the media we've used to
+	represent mathematics, not of the fundamental nature of
+	mathematics.  We could equally well have theorems which are
+	actively reified in the environments in which we think; they
+	respond to what we do, they cue us when needed.  That is,
+	they're visible, active parts of the mathematical process.
+
+      <p>
+	Let me give an example that at least starts to hint at what
+	I'm suggesting.  It's not what we'd usually call a
+	theorem*<span class="marginnote">* I'm really using the word
+	"theorem" as shorthand for "non-trivial mathematical
+	connection".</span>, but it's a very simple example of the
+	sort of connection often made in theorems.  It illustrates how
+	the value of $\sin(\theta)$ is just the $y$ co-ordinate for a
+	point on a unit circle at an angle $\theta$ from the
+	horizontal axis.  Try clicking and dragging to adjust the
+	angle on either side of the frame.  Or click "Start" to see
+	how the behaviour changes as $\theta$
+	changes<span class="marginnote">This design is not mine; many
+	variations on this idea have been developed. I do not know the
+	origin.</span>.
+      
+      <p>
+	<button id="startSineAnimation" 
+		onclick="startSineAnimation()">Start</button>
+	<button id="stopSineAnimation"
+		onclick="stopSineAnimation()"
+		style="display: none">Stop</button>
+
+      <canvas id="sine" height="200" width="600"></canvas>
+      <script src="sine.js"></script>
+
+      <p>
+	As I said above, this starts to hint at what I'm talking
+	about.  It does provide a nice, concrete illustration of a
+	fact that many students don't pick up on.  But it also has
+	many shortcomings.  One shortcoming is that it's
+	about <em>explanation</em>, not <em>discovery</em>.
+	Explanation is valuable, but it's also a much less challenging
+	context than discovery.  When you're doing discovery <em>you
+	don't know what results to apply</em>.
+
+      <p>
+	To unpack that, let me describe another fun example:
+	<a href="http://euclidthegame.org/">Euclid: The Game</a>.  In
+	level 1, the player is presented with two points, A and B,
+	shown below:
+	
+	<img src="Images/euclid_1.jpg">
+
+      <p> They are asked to use five tools &ndash; the five icons at
+	the top &ndash; to construct an equilateral triangle.  The
+	tools do things like inserting a line segment, or constructing
+	a circle with a specified center and specified edge point
+	(which could be, for example, points A and B).  By using those
+	tools appropriately we can construct an equilateral triangle.
+
+      <p>
+	Marvellous!  We now know something new: we've learnt how to
+	use those elementary tools to do something new: construct an
+	equilateral triangle.  Here's the next level of the game:
+
+	<img src="Images/euclid_2.jpg">
+
+	If you look closely, you'll see that there is a new icon in
+	the top row, representing our ability to construct an
+	equilateral triangle.  We're growing a user interface, moving
+	the mathematical relationships we discover into that
+	interface.
+
+      <p>
+	This is a nice idea, but has also poses many challenges as
+	implemented.  In the game as shown, the capabilities we add
+	are relatively opaque.  A user can click around for a while,
+	get lucky, and get an extra tool into their geometric kit.
+	They do not necessarily understand why what they did worked.
+	Oftentimes it's that understanding which is really valuable,
+	and which we most want people to internalize.  But that
+	process of understanding is <em>not</em>
+	*<span class="marginnote">* It might be possible to improve
+	the process of understanding by turning the game
+	into <em>Euclid Golf</em>: challenge people to find
+	constructions that are the <em>simplest possible</em> (e.g.,
+	required least effort, in some natural metric).  The
+	requirement of minimizing things tends to increase
+	understanding, as people take their initial, imperfect
+	solutions, and try to understand what is essential, and what
+	is cruft that can be eliminated.  I'm not sure this would
+	work: I think a lot of the "random" solutions that people are
+	producing are already minimal or near-minimal.  But maybe
+	there's the seed of an idea here.  Might be a nice future
+	project.</span> not emphasized in the current game.
+
+      <p>
+	Another challenge is that we know so much.  Imagine now that
+	we're working on some mathematical problem, and we write down
+	$n$ to denote a positive integer.  In an ideal mathematical
+	super-notebook, we'd potentially see $n$ in many different
+	ways.  What should those ways be?  The answer to that question
+	is complicated, because we know so much about the positive
+	integers.  Perhaps the most famous representation is as a
+	product of primes.  But it's just one of thousands of
+	representations known for positive integers.  Which
+	representation should we choose?  The art of mathematics is
+	very often in choosing which representation to apply in order
+	to obtain insight.  A good mathematician internalizes many
+	different representations, understands how they relate to one
+	another, in what contexts they tend to be applied, and how.  A
+	good user interface would reflect this plethora of
+	possibilities, and help hint or cue you to use the right
+	representation at the right time.
+
+
+      <p>
+	I don't know how to make this work.  I can make a few
+	observations.
+
+      <p>
+	Let's try doing the silly naive thing.
+
+
+
+	<p>
+	  PPP: Let me go through an example: my version of HJW.
+	  Supose rho is a density matrix.  Eigendecomposition.  
+
+
+
+      <p>This, incidentally, may be a major advantage of 3d
+      environments, like that provided by the Oculus Rift.  Having 3
+      spatial dimensions dramatically expands the available space.  It
+      should become possible to make much larger quantities of
+      information easily information, and to present richer cues.
+
+      <p>
+	<strong>An environment for doing mathematics needs a
+	marvellous type system.</strong>  I say this with some
+	trepidation &ndash; theorists of programming languages have
+	developed a theory of types, but it's most emphatically not
+	what I'm talking about.  
+      </p>
+
+      <p>
+	Let me see if I can explain something of what I mean by this.
+	Suppose I'm investigating a problem in quantum computing, and
+	in the course of the problem I encounter some matrix, $M$,
+	which I realize is central to the problem.  As soon as I see
+	such a matrix, all sorts of lights go &ndash; I will have in
+	mind results like: (a) the singular value decomposition; (b)
+	the Schur decomposition; (c) the fact that the matrix has at
+	least one eigenvector (if it's a complex matrix), and so on.
+	But I may suspect that the matrix is Hermitian.  Often that
+	can be proved with just a little work.  If I can do that, then
+	I immediately add a few extra facts: (d) the matrix is
+	diagonalizable by a unitary matrix; (e) the matrix has real
+	eigenvalues on the diagonal; (f) the singular values are the
+	absolute values of the eigenvalues, and so on.  Having
+	established that, I may suspect that the matrix is positive.
+	If I can establish that, I get access to another new slew of
+	facts.
+
+      <p>
+	What I am trying to convey here is that when reasoning about
+	mathematical objects I am constantly learning new things about
+	them, and that changes my internal representation of the
+	object.  In many ways, that seems to be much of what
+	mathematics is: little incremental increases in knowledge,
+	noticing this and that property, gradually building up your
+	understanding.  Needless to say, this process of constantly
+	updating one's understanding is not like the type system in
+	most programming languages.  Yet it nonetheless seems somewhat
+	close in spirit.
+
+
+	What I've noticed: they often seem very poorly typed.  When I
+	define a matrix in Matlab, it's not easy to tell it that it's
+      Hermitian.  I can't say what facts I know about it.  
+
+	Prolog is interesting in this regard.
+
+
+	There are many PPP: I've done this as a form of <em>explanation</em>.  That's
+	valuable, but it's not really quite right.  Part of the
+	problem is that it's too low a level.  A much more useful
+	thing would be at a higher level.  An example to give the
+	gist: that Thurston-Gleason story about cycles in groups.  Why
+	can't we see that picture?  Preferably with a powerful
+	interface?  What we really want is it as <em>part of an
+	environment in which to think and create</em>.  And I can't
+	show that at this point.
+
+	What you want is to <em>see what we know</em> about different
+	objects.
+
+
+	(The context here is strange.)
+
+      </p>
 
       <h2>Making the abstract concrete</h2>
 
@@ -1054,11 +1339,11 @@
 	on MathOverflow*<span class="marginnote">* A non-trivial
 	fraction of the discussion on MathOverflow is about making
 	abstract concepts more concrete.  This may be viewed as an
-	empirical confirmation that mathematicians spend much of their
-	time trying to understand mathematical objects in more
-	familiar terms.</span>, asking how to think in more than three
-	dimensions?  It's instructive to look through all the answers,
-	but I will review just two.  The first is
+	empirical confirmation of the fact that mathematicians spend
+	much of their time trying to understand mathematical objects
+	in more familiar terms.</span>, asking how to think in more
+	than three dimensions?  It's instructive to look through all
+	the answers, but I will quote just two here.  The first is
 	from <a href="http://terrytao.wordpress.com/">Terry Tao</a>:
       </p>
 
@@ -1168,24 +1453,24 @@
 	Both these answers relate "how to think in high dimensions?"
 	to problems that the authors of the answers already
 	understand.  Some of those problems, like thinking about a
-	megapixel image, are problems that most people understand.  In
-	other cases, like thinking about characteristic functions,
-	this is more specialized knowledge. However, the core in both
-	cases is to represent the problem in terms of something you
-	already have some understanding of.  The deeper your
-	understanding of the old representation, and the more powerful
-	a connection you forger, the deeper your understanding of the
-	new problem.  Note that the connection need not always be
-	precise.  As an undergraduate I worried a lot about how to
-	think about high-dimensional objects.  I was amused (and
-	somewhat relieved) as a grad student to find that often
-	discussions of high-dimensional objects were accompanied
-	merely by a blob on a blackboard, yet the picture of the blob
-	actually really did seem to help inform my intuition!  (There
-	are, of course, various embellishments one can use &ndash;
-	there's a nice
-	example <a href="http://mathoverflow.net/a/26010">here</a>.
-      </p>
+	megapixel image, are problems that most people understand,
+	even people with little mathematical training.  In other
+	cases, like thinking about characteristic functions, this is
+	more specialized knowledge. However, the core in both cases is
+	to represent the problem in terms of something you already
+	have some understanding of.  The deeper your understanding of
+	the old representation, and the more powerful a connection you
+	forge, the deeper your understanding of the new problem.  Note
+	that the connection need not always be precise.  As an
+	undergraduate I worried a lot about how to think about
+	high-dimensional objects.  I was amused (and somewhat
+	relieved) as a grad student to find that discussions of
+	high-dimensional objects were often accompanied merely by a
+	picture of a blob on a blackboard, yet the picture actually
+	really did seem to help inform my intuition!  (There are, of
+	course, various embellishments of this idea one can use
+	&ndash; there's a nice
+	example <a href="http://mathoverflow.net/a/26010">here</a>.)
 
       <p>
 	Neither of the answers above is quite about making the
@@ -1200,21 +1485,31 @@
 	almost-orthogonal vectors.  He's thought about this a lot; for
 	him it's an important fact, a fact which is connected to many
 	other things.
-      </p>
 
       <p>
-	We seem to have dwindled to the vacuously true.  Everyone
-	would no doubt agree that it's true that we should understand
-	the unfamiliar in terms of things we already understand well.
-	But so what?
-      </p>
+	We've dwindled to the vacuously true.  Everyone would no doubt
+	agree that it's true that we should understand the unfamiliar
+	in terms of things we already understand well.  But so what?
+	I think it's worth taking away a few simple observations: (1)
+	Systems for doing mathematics typically assume that
+	you've <em>already</em> gone through this process, and make
+	little (or no) explicit effort to help with it; (2) Of course,
+	such systems can be used to help go through this process
+	(e.g., I used <em>Maple</em> to learn about hypergeometric
+	functions, by playing with plots).  Doing this well requires
+	some non-obvious meta-cognitive strategies; (3) These
+	strategies could be reified within the system, either through
+	user interface elements, or perhaps through less subtle
+	methods, such as interactive essays which setup a playground
+	for us to understand the new in terms of the old.
 
       <p>
 	<strong>Mastering new representations can make it trivial to
 	solve problems that otherwise seemed difficult or
 	impossible.</strong>  As an example, suppose I ask you to
 	prove that the square root of two is irrational, that is, it's
-	impossible to write it as a ratio of two integers $m$ and $n$:
+	impossible to write the square root of two as a ratio of two
+	integers $m$ and $n$:
 
 	\begin{eqnarray}
 	\sqrt{2} = \frac{m}{n}.
@@ -1260,25 +1555,21 @@
 	background) is likely to have a much tougher time seeing why
 	the result is true.  Certainly, the proofs I saw as a student
 	were rather more cumbersome, in part because they didn't
-	assume knowledge of the fundamental theorem of arithmetic.
-      </p>
-
-      PPP --- tonally there's something not quite right in the last
-      para.  These are people who already know the proof!  What is
-      making
+	assume that we'd really mastered the fundamental theorem of
+	arithmetic.
 
       <p>
 	Of course, it is perfectly possible for someone to have
-	"learnt" the fundamental theorem of arithmetic, yet still have
-	trouble arriving at the proof above.  The reason is that
+	"understood" the fundamental theorem of arithmetic, yet still
+	have trouble arriving at the proof above.  The reason is that
 	mastering the theorem doesn't just mean knowing the content.
 	It also means: (a) knowing when it's likely to apply (problems
-	concerning multiplcation and division and lots of integer
-	terms are often good candidates); (b) knowing when to apply
-	heuristics like recasting your problem in a form where as many
-	things are integers as possible; and (c) having considerable
-	facility with basic algebra.  
-      </p>
+	concerning multiplication and division and lots of integer
+	terms are often good candidates, problems involving lots of
+	additions are often harder to apply it to); (b) knowing when
+	to apply heuristics like recasting your problem in a form
+	where as many things are integers as possible; and (c) having
+	considerable facility with basic algebra.
 
       <p>
 	PPP --- This is a clearcut but rather trivial example where
@@ -1331,210 +1622,29 @@
 	likely to be correct.
       </p>
 
-      <h2>Miscellanea</h2>
 
-      
-      <p>
-	<strong>(Almost) every theorem challenges us to develop a user
-	interface:</strong> Theorems express surprising connections
-	between mathematical concepts.  The fundamental theorem of
-	arithmetic connects the positive integers to the primes.  The
-	Cauchy-Schwarz inequality connects inner products and lengths.
-	The Sylow theorems give us information about the size of
-	subgroups of a finite group.  The fundamental theorem of
-	algebra tells us that there is a root for every non-trivial
-	polynomial over the complex numbers (or, equivalently, that
-	such a polynomial can be factored).  And so on.  Ideally, such
-	connections should be <em>made visible</em> through the user
-	interface.  Or, to put it another way, a theorem (or any
-	non-trivial relationship) should <em>disappear</em> into the
-	user interface; they should be, in effect, reified by the UI.
-      </p>
+      <h2>Questions / to do</h2>
 
       <p>
-	Knuth once said:
-      </p>
+	I'll stop there with the notes.  Obviously, there's much more
+	that could be done.
 
-      <blockquote>
-	"I have been impressed by numerous instances of mathematical
-	theories that are really about particular algorithms; these
-	theories are typically formulated in mathematical terms that
-	are much more cumbersome and less natural than the equivalent
-	formulation today's computer scientists would use."
-      </blockquote>
+      To do:
 
-      <p>
-	I think we can go quite a bit further.  Theorems are
-	traditionally presented as static statements about the
-	relationship between mathematical objects.  But that static
-	nature is a consequence of our media, not of the fundamental
-	nature of mathematics.  We could equally well have theorems
-	which are actively reified in the environments in which we
-	think.  That is, they're actually visible.
-      </p>
+      Lots and lots of design, challenging myself frequently to step
+      up to a new level.  I found even the rather simple examples here
+      quite onerous to do.  That is, of course, due to a lack of basic
+      fluency and experience on my part.  
 
-      <p>
-	Let me give an example that at least starts to hint at what
-	I'm suggesting.  It's not what we'd usually call a theorem,
-	but it's a very simple example of the sort of connection often
-	made in theorems.  It illustrates how the value of
-	$\sin(\theta)$ is just the $y$ co-ordinate for a point on a
-	unit circle at an angle $\theta$ from the horizontal axis.
-	Try clicking and dragging to adjust the angle on either side
-	of the frame.  Or click "Start" to see how the behaviour
-	changes as $\theta$ changes<span class="marginnote">This
-	design is not mine; many variations on this idea have been
-	developed. I do not know the origin.</span>.
-      </P>
-      
-      <p>
-	<button id="startSineAnimation" 
-		onclick="startSineAnimation()">Start</button>
-	<button id="stopSineAnimation"
-		onclick="stopSineAnimation()"
-		style="display: none">Stop</button>
+      It'd be especially fun, I think to 
 
-      <canvas id="sine" height="200" width="600"></canvas>
-      <script src="sine.js"></script>
+      Lots and lots of programming, challenging myself frequently to
+      step up to a new level.
 
-      <p>
-	As I said above, this starts to hint at what I'm talking
-	about.  But it has many shortcomings.  One shortcoming is that
-	it's about <em>explanation</em>, not <em>discovery</em>.
-	Explanation is tremendously valuable, but it's also a much
-	less challenging context than discovery.  When you're doing
-	discovery <em>you don't know what results to apply</em>.
+      Why haven't
 
-      <p>
-	The trouble is really that we know so much.  Suppose we write
-	$n$ to denote a positive integer, and we're trying to prove
-	something related to $n$.  Well, there's rather a lot we know
-	about the positive integers.  In my earlier example I used the
-	representation of positive integers as products of primes, and
-	this is, of course, tremendously valuable.  But it's just one
-	of thousands of representations known for positive integers.
-	Which representation should we choose?  The art of mathematics
-	is very often in choosing which representation to apply in
-	order to obtain insight.  A good mathematician internalizes
-	many different representations, understands how they relate to
-	one another, in what contexts they tend to be applied, and
-	how.  A good user interface would reflect this plethora of
-	possibilities, and help hint or cue you to use the right
-	representation at the right time.
+How does this relate to other big picture opportunities?
 
-      <p>
-	A fun example that starts to hint at what I'm talking about is
-	<a href="http://euclidthegame.org/">Euclid: The Game</a>.  In
-	level 1, the player is presented with two points, A and B,
-	shown below:
-	
-	<img src="Images/euclid_1.jpg">
-
-      <p> They are asked to use five tools &ndash; the five icons at
-	the top &ndash; to construct an equilateral triangle.  The
-	tools do things like construct a circle with a specified
-	center and specified edge point (which could be, for example,
-	points A and B).  By choosing appropriately we can find
-
-	Growing a user interface.
-
-	What you want to do in practice is grow your own user interface.
-
-      <p>
-	I don't know how to make this work.  I can make a few
-	observations.
-
-      <p>
-	Let's try doing the silly naive thing.
-
-
-
-	<p>
-	  PPP: Let me go through an example: my version of HJW.
-	  Supose rho is a density matrix.  Eigendecomposition.  
-
-
-
-      <p>This, incidentally, may be a major advantage of 3d
-      environments, like that provided by the Oculus Rift.  Having 3
-      spatial dimensions dramatically expands the available space.  It
-      should become possible to make much larger quantities of
-      information easily information, and to present richer cues.
-
-      <p>
-	<strong>An environment for doing mathematics needs a
-	marvellous type system.</strong>  I say this with some
-	trepidation &ndash; theorists of programming languages have
-	developed a theory of types, but it's most emphatically not
-	what I'm talking about.  
-      </p>
-
-      <p>
-	Let me see if I can explain something of what I mean by this.
-	Suppose I'm investigating a problem in quantum computing, and
-	in the course of the problem I encounter some matrix, $M$,
-	which I realize is central to the problem.  As soon as I see
-	such a matrix, all sorts of lights go &ndash; I will have in
-	mind results like: (a) the singular value decomposition; (b)
-	the Schur decomposition; (c) the fact that the matrix has at
-	least one eigenvector (if it's a complex matrix), and so on.
-	But I may suspect that the matrix is Hermitian.  Often that
-	can be proved with just a little work.  If I can do that, then
-	I immediately add a few extra facts: (d) the matrix is
-	diagonalizable by a unitary matrix; (e) the matrix has real
-	eigenvalues on the diagonal; (f) the singular values are the
-	absolute values of the eigenvalues, and so on.  Having
-	established that, I may suspect that the matrix is positive.
-	If I can establish that, I get access to another new slew of
-	facts.
-
-      <p>
-	What I am trying to convey here is that when reasoning about
-	mathematical objects I am constantly learning new things about
-	them, and that changes my internal representation of the
-	object.  In many ways, that seems to be much of what
-	mathematics is: little incremental increases in knowledge,
-	noticing this and that property, gradually building up your
-	understanding.  Needless to say, this process of constantly
-	updating one's understanding is not like the type system in
-	most programming languages.  Yet it nonetheless seems somewhat
-	close in spirit.
-
-
-      What I've noticed: they often seem very poorly typed.  When I
-      define a matrix in Matlab, it's not easy to tell it that it's
-      Hermitian.  I can't say what facts I know about it.  
-
-      Prolog is interesting in this regard.
-
-
-There are many PPP: I've done this as a form of <em>explanation</em>.  That's
-	valuable, but it's not really quite right.  Part of the
-	problem is that it's too low a level.  A much more useful
-	thing would be at a higher level.  An example to give the
-	gist: that Thurston-Gleason story about cycles in groups.  Why
-	can't we see that picture?  Preferably with a powerful
-	interface?  What we really want is it as <em>part of an
-	environment in which to think and create</em>.  And I can't
-	show that at this point.
-
-	What you want is to <em>see what we know</em> about different
-	objects.
-
-
-	(The context here is strange.)
-
-      <p>PPP: Git.  ANd add the big picture stuff.  Decide on a path
-      to completion.  All b'storming.
-
-
-      <p>
-	<strong>Problem:</strong>
-      </p>
-
-      <p>
-	<strong>Questions:</strong>
-      </p>
 
       <p>
 	<strong>Collect problems.</strong>  In particular, it's worth
@@ -1579,22 +1689,12 @@ Design is difficult:
 Design is a super-power:
 
 
+      Connection to other questions I am interested in: what comes
+      after the web?  What is the simplest system design that would
+      support (most of) the experience of the web?  Why is
+      paper-and-pencil still so much better than a computer for so
+      many types of exploration?
 
-      To do:
-
-      Lots and lots of design, challenging myself frequently to step
-      up to a new level.  I found even the rather simple examples here
-      quite onerous to do.  That is, of course, due to a lack of basic
-      fluency and experience on my part.  
-
-      It'd be especially fun, I think to 
-
-      Lots and lots of programming, challenging myself frequently to
-      step up to a new level.
-
-      Why haven't
-
-How does this relate to other big picture opportunities?
 
 
     </div>
