@@ -223,7 +223,7 @@
 	similar work.  (I've made this mistake with other works,
 	too.  <em>Mea culpa</em>. ) Part of the reason is that I have
 	much less design and programming experience than
-	Victor*<span class="marginnote" style="padding-top: 200px">*
+	Victor*<span class="marginnote" style="padding-top: 240px">*
 	And, I would guess, much more mathematical research
 	experience, which creates another kind of barrier to
 	understanding.</span>, and the deeper I got, the more keenly I
@@ -1038,10 +1038,10 @@
       <p>
 	There are, of course, many systems for exploring mathematics
 	that I haven't listed above.  Think of Coq, Wolfram Alpha, D3,
-	R, Julia, Logo, Scratch, Haskell, and others.  All of these
-	are, in their own ways, different to both <em>Kill Math</em>
-	and <em>Mathematica</em>*<span class="marginnote">* Wolfram
-	Alpha is an extension of <em>Mathematica</em>, but is
+	R, Julia, Prolog, Logo, Scratch, Haskell, and others.  All of
+	these are, in their own ways, different to both <em>Kill
+	Math</em> and <em>Mathematica</em>*<span class="marginnote">*
+	Wolfram Alpha is an extension of <em>Mathematica</em>, but is
 	fundamentally different in enough ways that it requires a
 	separate analysis.  The same seems likely to be true of
 	Wolfram's new programming language, which I have not yet
@@ -1053,8 +1053,8 @@
 	and proofs: these become things that can be inspected,
 	manipulated, and related to other objects.  However, I do not
 	know to what extent this sort of extension is the raison
-	d'être of these systems, and to what extent it's simply an
-	an unintended consequence of other design decisions.
+	d'être of these systems, and to what extent it's simply an an
+	unintended consequence of other design decisions.
 
       <h2>Moving theorems into the user interface</h2>
 
@@ -1074,9 +1074,9 @@
 	we should <em>move theorems into the user interface</em>.
 	Tipping it upside down, we can view theorems as challenges to
 	develop a user interface which reifies those theorems in a
-	powerful way, cueing the user as necessary.  Ideally, the
-	representation used to denote mathematical objects will in
-	fact suggest the relationships in question.
+	powerful way, providing the user with cues that help them
+	reason, and representing mathematical objects in ways that
+	help suggest the relationships they obey.
 
       <p>
 	Knuth <a href="http://www.jstor.org/discover/10.2307/2318994">once
@@ -1095,10 +1095,10 @@
       <p>
 	We can go much further.  Theorems are traditionally presented
 	as static statements about the relationship between
-	mathematical objects.  But that static nature is a consequence
-	of historical accidents about the media we've used to
-	represent mathematics, not of the fundamental nature of
-	mathematics.  We could equally well have theorems which are
+	mathematical objects.  But the static nature of such theorems
+	is a consequence of historical accidents about the media we've
+	used to represent mathematics, not of the fundamental nature
+	of mathematics.  We could equally well have theorems which are
 	actively reified in the environments in which we think; they
 	respond to what we do, they cue us when needed.  That is,
 	they're visible, active parts of the mathematical process.
@@ -1115,9 +1115,10 @@
 	horizontal axis.  Try clicking and dragging to adjust the
 	angle on either side of the frame.  Or click "Start" to see
 	how the behaviour changes as $\theta$
-	changes<span class="marginnote">This design is not mine; many
-	variations on this idea have been developed. I do not know the
-	origin.</span>.
+	changes*<span class="marginnote">* This design is not mine,
+	nor do I know where the idea originated (I have seen
+	variations on this idea many times, in slightly different
+	formats).</span>.
       
       <p>
 	<button id="startSineAnimation" 
@@ -1132,131 +1133,173 @@
       <p>
 	As I said above, this starts to hint at what I'm talking
 	about.  It does provide a nice, concrete illustration of a
-	fact that many students don't pick up on.  But it also has
-	many shortcomings.  One shortcoming is that it's
-	about <em>explanation</em>, not <em>discovery</em>.
+	fact that many students don't pick up on.  One shortcoming is
+	that it's about <em>explanation</em>, not <em>discovery</em>.
 	Explanation is valuable, but it's also a much less challenging
 	context than discovery.  When you're doing discovery <em>you
 	don't know what results to apply</em>.
 
       <p>
-	To unpack that, let me describe another fun example:
+	To unpack that a bit further, let me discuss another fun
+	example:
 	<a href="http://euclidthegame.org/">Euclid: The Game</a>.  In
-	level 1, the player is presented with two points, A and B,
-	shown below:
+	level 1 of the game, the player is presented with two points,
+	A and B, shown below:
 	
 	<img src="Images/euclid_1.jpg">
 
-      <p> They are asked to use five tools &ndash; the five icons at
-	the top &ndash; to construct an equilateral triangle.  The
-	tools do things like inserting a line segment, or constructing
-	a circle with a specified center and specified edge point
-	(which could be, for example, points A and B).  By using those
-	tools appropriately we can construct an equilateral triangle.
+      <p> They are asked to use five tools &ndash; the five icons on
+	the top left &ndash; to construct an equilateral triangle.
+	The tools do things like inserting a line segment, or
+	constructing a circle with a specified center and specified
+	edge point (which could be, for example, points A and B).  By
+	using those tools appropriately we can construct an
+	equilateral triangle.
 
       <p>
 	Marvellous!  We now know something new: we've learnt how to
-	use those elementary tools to do something new: construct an
-	equilateral triangle.  Here's the next level of the game:
-
+	use those elementary tools to construct an equilateral
+	triangle.  Here's the next level of the game:
+      <p>
 	<img src="Images/euclid_2.jpg">
-
+      <p>
 	If you look closely, you'll see that there is a new icon in
 	the top row, representing our ability to construct an
 	equilateral triangle.  We're growing a user interface, moving
 	the mathematical relationships we discover into that
-	interface.
+	interface.  And as a result we can <em>see what we know</em>
+	about different mathematical objects.
 
       <p>
-	This is a nice idea, but has also poses many challenges as
-	implemented.  In the game as shown, the capabilities we add
-	are relatively opaque.  A user can click around for a while,
-	get lucky, and get an extra tool into their geometric kit.
-	They do not necessarily understand why what they did worked.
-	Oftentimes it's that understanding which is really valuable,
-	and which we most want people to internalize.  But that
-	process of understanding is <em>not</em>
-	*<span class="marginnote">* It might be possible to improve
-	the process of understanding by turning the game
-	into <em>Euclid Golf</em>: challenge people to find
-	constructions that are the <em>simplest possible</em> (e.g.,
-	required least effort, in some natural metric).  The
-	requirement of minimizing things tends to increase
-	understanding, as people take their initial, imperfect
-	solutions, and try to understand what is essential, and what
-	is cruft that can be eliminated.  I'm not sure this would
-	work: I think a lot of the "random" solutions that people are
+	This is a nice idea, but has many shortcomings as implemented.
+	In the game as shown, the capabilities we add are relatively
+	opaque.  A user can click around for a while, get lucky, and
+	add an extra tool into their geometric kit.  They do not
+	necessarily understand why what they did worked.  Oftentimes
+	it's that understanding which is really valuable, and which we
+	most want people to internalize.  But that process of
+	understanding is <em>not</em> *<span class="marginnote">* It
+	might be possible to improve the process of understanding by
+	turning the game into <em>Euclid Golf</em>: challenge people
+	to find constructions that are the <em>simplest possible</em>
+	(e.g., required least effort, in some natural metric).  The
+	requirement of minimizing the constructions will tend to
+	increase understanding, as people take their initial,
+	imperfect solutions, and try to understand what is essential,
+	and what is cruft that can be eliminated.  I'm not sure this
+	would work: many of the "random" solutions that people are
 	producing are already minimal or near-minimal.  But maybe
 	there's the seed of an idea here.  Might be a nice future
-	project.</span> not emphasized in the current game.
+	project.</span> not what's emphasized in the current game.
 
       <p>
-	Another challenge is that we know so much.  Imagine now that
+	Another problem is that we know so much.  Think of all the
+	different geometric constructions that we know.  How could we
+	fit all those thousands of constructions in a natural way into
+	a user interface?  Without some clever ideas the interface is
+	going to be too confusing to be useful. 
+
+      <p>
+	This problem arises also in other contexts.  Imagine now that
 	we're working on some mathematical problem, and we write down
 	$n$ to denote a positive integer.  In an ideal mathematical
 	super-notebook, we'd potentially see $n$ in many different
-	ways.  What should those ways be?  The answer to that question
-	is complicated, because we know so much about the positive
-	integers.  Perhaps the most famous representation is as a
-	product of primes.  But it's just one of thousands of
-	representations known for positive integers.  Which
-	representation should we choose?  The art of mathematics is
-	very often in choosing which representation to apply in order
-	to obtain insight.  A good mathematician internalizes many
-	different representations, understands how they relate to one
-	another, in what contexts they tend to be applied, and how.  A
-	good user interface would reflect this plethora of
-	possibilities, and help hint or cue you to use the right
-	representation at the right time.
-
+	ways. For instance, perhaps the most famous representation is
+	that every such integer is a unique product of
+	primes*<span class="marginnote">* Note, by the way, that I'm
+	not saying that when you write down an integer &mdash; say, 91
+	&mdash; you should be able to see its prime factorization (7 x
+	13).  I'm speaking more abstractly: every integer $n$ has a
+	unique prime factorization $p_1^{m_1} p_2^{m_2} \ldots
+	p_k^{m_k}$.  We should easily be able to reason about these
+	alternate representations.</span>.  But it's just one of
+	thousands of representations known for positive integers.
+	Which representations are relevant?  
+	
+      <p>
+	The art of mathematics is very often in choosing which
+	representation to apply in order to obtain insight.  A good
+	mathematician internalizes many different representations,
+	understands how they relate to one another, in what contexts
+	they tend to be applied, and how.  A good user interface would
+	reflect this plethora of possibilities, and help hint or cue
+	you to use the right representation at the right time.  This
+	is what I was referring to above when I said that explanation
+	is a much less challenging context than discovery.  When
+	you're doing the kind of exploration that leads to discovery
+	you don't necessarily know what results to apply.  Thus, it
+	seems to me to be a much easier problem to design user
+	interfaces for explanation than for discovery.
 
       <p>
-	I don't know how to make this work.  I can make a few
-	observations.
+	So I don't immediately see how to design a user interface for
+	discovery.  I've made a few initial on-paper attempts, working
+	naively, and they have not worked so well.  I may recount this
+	in future notes &ndash; it's worth thinking about what went
+	wrong.  Certainly, this is a problem deserving sustained
+	effort!  I will make three comments that occurred to me while
+	working, however.
 
       <p>
-	Let's try doing the silly naive thing.
-
-
-
-	<p>
-	  PPP: Let me go through an example: my version of HJW.
-	  Supose rho is a density matrix.  Eigendecomposition.  
-
-
-
-      <p>This, incidentally, may be a major advantage of 3d
-      environments, like that provided by the Oculus Rift.  Having 3
-      spatial dimensions dramatically expands the available space.  It
-      should become possible to make much larger quantities of
-      information easily information, and to present richer cues.
+	First, in terms of the richness of the user interface needed
+	to do discovery: there may be a considerable advantage to
+	using a 3d environment, like that provided by the Oculus Rift.
+	I expect that having 3 spatial dimensions will make it
+	possible for designers to create interfaces that make it
+	possible for users to work in a far richer and more complex
+	choice environment than is currently the case; enough to make
+	a dramatic qualitative change in the experience.
 
       <p>
-	<strong>An environment for doing mathematics needs a
-	marvellous type system.</strong>  I say this with some
-	trepidation &ndash; theorists of programming languages have
-	developed a theory of types, but it's most emphatically not
-	what I'm talking about.  
+	Second, I proceeded by picking a piece of simple but genuine
+	mathematics where it's possible to give a plausible account of
+	discovery.  I found that having an existing narrative of
+	discovery helped in stimulating user interface ideas.  My
+	initial experiments were with the main result from
+	a <a href="http://arxiv.org/abs/quant-ph/9909020">paper I
+	wrote in 1999</a>.  It solves a simple but fundamental problem
+	about the representation of states in quantum mechanics.  The
+	benefits of this were: (a) I have a pretty good idea of how
+	the result was discovered*<span class="marginnote">* This
+	sounds facetious, but is not; I don't think we really know
+	what's going on in our </span>; (b) the argument is extremely
+	simple; (c) it's an argument based almost entirely around
+	several switches of representation.
+
+      <p>
+	Third, it seems to me that <em>an environment for doing
+	mathematics needs an exquisite, supremely flexible and
+	expressive type system</em>.  I say this with some
+	trepidation, since theorists of programming languages have
+	developed a theory of types, but that really doesn't seem to
+	be what I'm talking about.
       </p>
 
       <p>
-	Let me see if I can explain something of what I mean by this.
-	Suppose I'm investigating a problem in quantum computing, and
-	in the course of the problem I encounter some matrix, $M$,
-	which I realize is central to the problem.  As soon as I see
-	such a matrix, all sorts of lights go &ndash; I will have in
-	mind results like: (a) the singular value decomposition; (b)
-	the Schur decomposition; (c) the fact that the matrix has at
-	least one eigenvector (if it's a complex matrix), and so on.
-	But I may suspect that the matrix is Hermitian.  Often that
-	can be proved with just a little work.  If I can do that, then
-	I immediately add a few extra facts: (d) the matrix is
+	Let me see if I can explain what I mean by this.  Suppose I'm
+	investigating a problem in quantum computing, and in the
+	course of the problem I encounter some matrix, $M$, which I
+	realize is central to the problem.  As soon as I see such a
+	matrix, all sorts of lights go &ndash; I will have in mind
+	results like: (a) the singular value decomposition; (b) the
+	Schur decomposition; (c) the fact that the matrix has at least
+	one eigenvector (if it's a complex matrix), and so on.  But I
+	may suspect that the matrix is Hermitian.  Often that can be
+	proved with just a little work.  If I can do that, then I
+	immediately add a few extra facts: (d) the matrix is
 	diagonalizable by a unitary matrix; (e) the matrix has real
 	eigenvalues on the diagonal; (f) the singular values are the
 	absolute values of the eigenvalues, and so on.  Having
-	established that, I may suspect that the matrix is positive.
-	If I can establish that, I get access to another new slew of
-	facts.
+	established the Hermitian property, I may suspect that the
+	matrix is positive.  If I can establish that, I get access to
+	another new slew of facts.  And so on.  Ultimately, one ends
+	up reasoning about objects where you have long lists of
+	properties: this is a positive, Hermitian matrix, with
+	such-and-such a gap between the first and second largest
+	eigenvalues, the trace is such-and-such, and so on.  You must
+	be able to hold all those properties in your head, understand
+	the implications of the properties, and how they relate to one
+	another.
 
       <p>
 	What I am trying to convey here is that when reasoning about
@@ -1268,33 +1311,75 @@
 	understanding.  Needless to say, this process of constantly
 	updating one's understanding is not like the type system in
 	most programming languages.  Yet it nonetheless seems somewhat
-	close in spirit.
+	close in spirit.  What you want is a type system which is
+	flexible enough to express all these many, many properties.
+	When thinking about problems the kind of thing I find myself
+	thinking is "Well, this matrix has a pretty large spectral
+	gap, but not too large, it's about a factor such-and-such
+	smaller than this matrix over here".  What sort of type system
+	would support such a statement?*<span class="marginnote">*
+	Ideally, the type system would allow some ambiguity, which is
+	often extremely helpful when getting a feeling for a
+	mathematical problem.  But even an expressive system without
+	much tolerance for ambiguity would be useful.</span>
 
+      <p>
+	When I look at existing systems for doing mathematics, I don't
+	see this.  When I'm using Python / numpy to do linear algebra
+	I have very limited ways of expressing even such basic facts
+	as that a matrix is Hermitian, or unitary, much less the
+	actual way in which I think about the objects, in terms of
+	towers of interrelating properties.  And because the system is
+	so unaware of the actual nature of the mathematical objects
+	it's manipulating, it has no means of helping express what I
+	know (or ought to know) about those objects.
 
-	What I've noticed: they often seem very poorly typed.  When I
-	define a matrix in Matlab, it's not easy to tell it that it's
-      Hermitian.  I can't say what facts I know about it.  
+      <p>
+	I've used the term <em>type system</em> here with some
+	trepidation.  The term doesn't have quite the right
+	connotations: people think of type systems as dry things, not
+	as things connected to beautiful, expressive user interfaces.
+	But I'm thinking of the type as being intimately connected to
+	the user interface.  In this view, a srubbable number
+	is <em>not</em> the same type as an ordinary number.  In other
+	words, when I say "type" I'm really referring both to a rich
+	concept of what a mathematical object is, and rich ways of
+	allowing the user to interact with it, and to relate it to
+	other objects.
 
-	Prolog is interesting in this regard.
+      <p>
+	Let me finish this section with
+	a <a href="http://mathoverflow.net/questions/38639/thinking-and-explaining">little
+	story</a> from Thurston about thinking about mathematics:
+	
+	<blockquote>
+	  <em>
+	    How big a gap is there between how you think about
+	    mathematics and what you say to others?  Do you say what
+	    you're thinking?  Please give either personal examples of
+	    how your thoughts and words differ, or describe how they
+	    are connected for you... mathematicians often have
+	    unspoken thought processes guiding their work which may be
+	    difficult to explain, or they feel too ihibited to
+	    try... Once I mentioned this phenomenon to Andy Gleason;
+	    he immediately responded that when he taught algebra
+	    courses, if he was discussing cyclic subgroups of a group,
+	    he had a mental image of group elements breaking into a
+	    formation organized into circular groups.  He said that
+	    'we' never would say anything like that to the students.
+	    His words made a vivid picture in my head, because it fit
+	    with how I thought about groups.  I was reminded of my
+	    long struggle as a student, trying to
+	    attach <em>meaning</em> to 'group', rather than just a
+	    collection of symbols, words, definitions, theorems and
+	    proofs that I read in a texbook.
+	  </em>
+	</blockquote>
 
-
-	There are many PPP: I've done this as a form of <em>explanation</em>.  That's
-	valuable, but it's not really quite right.  Part of the
-	problem is that it's too low a level.  A much more useful
-	thing would be at a higher level.  An example to give the
-	gist: that Thurston-Gleason story about cycles in groups.  Why
-	can't we see that picture?  Preferably with a powerful
-	interface?  What we really want is it as <em>part of an
-	environment in which to think and create</em>.  And I can't
-	show that at this point.
-
-	What you want is to <em>see what we know</em> about different
-	objects.
-
-
-	(The context here is strange.)
-
-      </p>
+	<p>
+	  Why can't we see that picture?  Preferably with a powerful
+	  interface, as part of an environment in which to think and
+	  create.
 
       <h2>Making the abstract concrete</h2>
 
@@ -1503,18 +1588,58 @@
 	methods, such as interactive essays which setup a playground
 	for us to understand the new in terms of the old.
 
+
+      <p>
+	<strong>On genius:</strong> Most people have had the
+	experience of talking with someone who seems to them to have
+	lightning mathematical insight.  You mention a problem to that
+	person, something you have struggled with for hours or, in
+	extreme cases, months or years.  <em>Voila</em>, they solve it
+	nearly instantly.  What a genius!
+
+      <p>
+	This phenomenon occurs at every level, from elementary school
+	to discussions amongst professional mathematicians.  From the
+	point of view of the person posing the problem, the "genius"
+	appears to have special magical powers, abilities they do not
+	have, and perhaps feel they will never have.
+
+      <p>
+	I believe this is wrong.  I don't believe such a "genius" has
+	access to some special ability that other people don't have.
+	There is no such genius; instead, there are people who
+	systematically search out more ways of representing
+	mathematical objects in terms of things they already
+	understand well.  They then slowly and laboriously practice
+	using those many representations, until they come to seem
+	simple and natural.  This is more prosaic than the
+	genius-with-special-powers story, but I believe it's more
+	likely to be correct.  It should be possible to support this
+	process in our systems.
+
       <p>
 	<strong>Mastering new representations can make it trivial to
 	solve problems that otherwise seemed difficult or
-	impossible.</strong>  As an example, suppose I ask you to
-	prove that the square root of two is irrational, that is, it's
-	impossible to write the square root of two as a ratio of two
-	integers $m$ and $n$:
+	impossible.</strong>  This is a reiteration of the last point,
+	from a slightly different example.  I wanted to write down a
+	very concrete example of how mastery of new representations
+	can trivialize formerly difficult problems.  The example does
+	not, alas, involve any nice new representations &ndash; it's a
+	great problem to develop an environment (maybe an extension of
+	the difference equation solver) which does.  But I though it
+	might nonetheless be useful to keep in mind as an example of
+	this process.
+
+      <p>
+	Suppose I ask you to prove that the square root of two is
+	irrational, that is, it's impossible to write the square root
+	of two as a ratio of two integers $m$ and $n$:
 
 	\begin{eqnarray}
 	\sqrt{2} = \frac{m}{n}.
 	\end{eqnarray}
 
+      <p>
 	Now, let's suppose that you don't know a whole lot about
 	number theory.  Maybe you're a high-school student.  But it
 	just happens that you've really mastered
@@ -1539,18 +1664,18 @@
 	of prime factors, and the right-hand side has an even number
 	of prime factors.  This is impossible by the uniqueness of the
 	prime factorization.  And so our original assumption, that
-	$\sqrt{2} = m / n$, must have been false.  The square root of
-	$2$ is irrational.
-      </p>
+	$\sqrt{2} = m / n$, must have been false, and we see that the
+	square root of $2$ is irrational.
 
       <p>
 	If you only know a little number theory, but just happen to
 	have mastered the fundamental theorem of arithmetic, then
 	proving the square root of $2$ is irrational is very nearly
-	the kind of thing you can see in flash of insight.  I have
-	verbally explained the above proof to people in less than $30$
-	seconds, only to have them cut me off with an exclamation of
-	"Oh, I see!"  But someone who happens not to have mastered the
+	the kind of thing you can see in a flash of insight.  I began
+	verbally explaining the above proof to my wife (a PhD in
+	theoretical physics), only to have her cut me off after less
+	than thirty seconds with a delighted exlamation of "Oh, I
+	see!"  But someone who happens not to have mastered the
 	fundamental theorem (but otherwise has a comparable
 	background) is likely to have a much tougher time seeing why
 	the result is true.  Certainly, the proofs I saw as a student
@@ -1572,78 +1697,57 @@
 	considerable facility with basic algebra.
 
       <p>
-	PPP --- This is a clearcut but rather trivial example where
-	comfort with a represention can make the formerly difficult
-	seem trivial.  There are higher-level examples, too (XXX).
-	Intuitively, having such representations computer-generated
-	should help a lot.  But I can't give a good example.  And so
-	it's a good challenge problem.
-
-	<p>PPP --- The framing is wrong.  What exactly are the
-	conditions under which this would be striking?
-
-      <p>PPP --- Can I do a representation?  What would such a
-      representation look like?
-
-      <p>PPP Structurally this section is odd.  What's it for? I think
-      it's something of a digression.  Why have I included this story?
-      Why have I included the next section, on genius?  What's this
-      all got to do with the overall theme?
-
-
-
-      <p>
-	<strong>On genius:</strong> Most people have had the
-	experience of talking with someone who seems to them to have
-	lightning mathematical insight.  You mention a problem to that
-	person, something you have struggled with for hours or, in
-	extreme cases, months or years.  <em>Voila</em>, they solve it
-	nearly instantly.  What a genius!
-      </p>
-
-      <p>
-	This phenomenon occurs at every level, from elementary school
-	to discussions amongst professional mathematicians.  From the
-	point of view of the person posing the problem, the "genius"
-	appears to have special magical powers, abilities they do not
-	have, and perhaps feel they will never have.
-      </p>
-
-      <p>
-	I believe this is wrong.  I don't believe such a "genius" has
-	access to some special ability that other people don't have.
-	There is no such genius; instead, there are people who
-	systematically search out more ways of representing
-	mathematical objects in terms of things they already
-	understand well.  They then slowly and laboriously practice
-	using those many representations, until they come to seem
-	simple and natural.  This is more prosaic than the
-	genius-with-special-powers story, but I believe it's more
-	likely to be correct.
-      </p>
-
+	<strong>Problem:</strong> Develop a prototype environment
+	which makes this kind of change in representation easier.
 
       <h2>Questions / to do</h2>
 
       <p>
 	I'll stop there with the notes.  Obviously, there's much more
-	that could be done.
+	to be done.  Let me conclude with a few final notes on things
+	to explore.
 
-      To do:
+      <p>
+	What's the connection to other specific questions I am
+	interested in: What comes after the web?  What is the simplest
+	system design that would support (most of) the experience of
+	the web?  Why is paper-and-pencil still so much better than a
+	computer for so many types of exploration?  What will change
+	that?  (Broadly: the really good pattern recognition that is
+	now coming online, together with new hardware and UI design;
+	this should open up entirely new worlds.).
+
+      <p>
+	What's the connection to other big picture problems that I'm
+	interested in?  E.g.: designing group behaviour; designing
+	institutions; the allocation of expert attention; amplifying
+	collective intelligence; open science; scaling human systems;
+	and artificial intelligence.
+
+      <p>
+	To push further in the directions described here, I'd need to
+	learn to program well, and to design user interfaces well.
+	Both these abilities seem to me to be super-powers, enlarging
+	in a way similar to learning to write; it's well worth taking
+	time to acquire at least a basic facility with them.  The
+	combination to practice over and over is something like:
+	"Sketch out a design problem; sketch out an initial (really
+	bad) idea for a solution; implement; criticise the problem and
+	solution; iterate".  I found even the very simple problems in
+	these notes &ndash; the non-linear scrubbable numbers and the
+	sine visualization &ndash; quite challenging (and informative)
+	to build out.  With much more experience
+
+      <p>
+	Classic connections: the Genera environment.
 
       Lots and lots of design, challenging myself frequently to step
       up to a new level.  I found even the rather simple examples here
       quite onerous to do.  That is, of course, due to a lack of basic
       fluency and experience on my part.  
 
-      It'd be especially fun, I think to 
-
       Lots and lots of programming, challenging myself frequently to
       step up to a new level.
-
-      Why haven't
-
-How does this relate to other big picture opportunities?
 
 
       <p>
@@ -1659,9 +1763,6 @@ How does this relate to other big picture opportunities?
       <p>
 	<strong>Problems:</strong>
       </p>
-
-Programming is a super-power: It's enlarging in a way similar to
-learning to write.
 
 TO get good at programming: write many programs, do lots of iteration to improve the programs.  The programs should preferably be important to me, based on ideas which matter to me, and they should push me to develop in new ways.
 
@@ -1685,16 +1786,6 @@ Without great
 designs, all the programming skill in
 
 Design is difficult:
-
-Design is a super-power:
-
-
-      Connection to other questions I am interested in: what comes
-      after the web?  What is the simplest system design that would
-      support (most of) the experience of the web?  Why is
-      paper-and-pencil still so much better than a computer for so
-      many types of exploration?
-
 
 
     </div>
