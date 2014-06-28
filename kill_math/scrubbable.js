@@ -14,7 +14,9 @@ function updateAnswer() {
 }
 
 function initScrubbableNumbers() {
-    var htmlElement = document.registerElement('scrubbable-number');
+    if (typeof document.registerElement !== "undefined") {
+	var htmlElement = document.registerElement('scrubbable-number');
+    }
     $("scrubbable-number").each(function() {
 	var childId = this.id+"Child";
 	var n = parseInt(this.textContent);

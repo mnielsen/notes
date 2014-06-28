@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-  <!-- 9519 -->
   <head>
     <meta charset="utf-8">
     <title>Kill Math: Notes</title>
@@ -20,7 +19,7 @@
         font-size: 16px;
         color: #222;
       }
-      blockquote em {
+      blockquote > em {
         color: #555;
         font-size: 15px;
       }
@@ -146,9 +145,9 @@
       <p>
 	In his
 	talk <a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">Media
-	For Thinking the Unthinkable</a> Victor states a closely
-	related but even more ambitious program.  He quotes Richard
-	Hamming's essay
+	For Thinking the Unthinkable</a> Victor states a related but
+	even more ambitious program.  He quotes Richard Hamming's
+	essay
 	on <a href="https://www.dartmouth.edu/~matc/MathDrama/reading/Hamming.html">The
 	Unreasonable Effectiveness of Mathematics</a>:
       </p>
@@ -158,10 +157,10 @@
 	  Just as there are odors that dogs can smell and we cannot,
 	  as well as sounds that dogs can hear and we cannot, so too
 	  there are wavelengths of light we cannot see and flavors we
-	  cannot taste. Why then, given our brains wired the way they
-	  are, does the remark "Perhaps there are thoughts we cannot
-	  think," surprise you? Evolution, so far, may possibly have
-	  blocked us from being able to think in some directions;
+	  cannot taste. Why then, given our brains [are] wired the way
+	  they are, does the remark "Perhaps there are thoughts we
+	  cannot think," surprise you? Evolution, so far, may possibly
+	  have blocked us from being able to think in some directions;
 	  there could be unthinkable
 	  thoughts</em>*<span class="marginnote">* Quantum mechanics
 	  is famously difficult to understand.  This is due in part to
@@ -181,15 +180,15 @@
 	  way.  An argument for this point of view is that our brains
 	  evolved to understand a classical world.  Such brains might
 	  perhaps come very poorly equipped to grasp a theory such as
-	  quantum mechanics, which doesn't obey principles as basic as
-	  local realism.
+	  quantum mechanics, which doesn't obey principles as
+	  fundamental as local realism.
 
-	  <br><br> Now, let me add the caveat that I believe the
-	  conventional point of view is likely correct, and we simply
-	  have not yet found a good but relatively conventional
-	  explanation of quantum mechanics, the kind of explanation
+	  <br><br> With that said, let me add the caveat that I
+	  believe the conventional point of view is likely correct,
+	  and we simply have not yet found a good conventional
+	  explanation of quantum mechanics, the type of explanation
 	  which could have been understood with some work by a
-	  physicist in, say, 1950, without access to special tools to
+	  physicist in, say, 1950, without using special tools to
 	  extend their mind.  But part of me wonders if a more radical
 	  expansion of what a theory <em>is</em> may be
 	  needed.</span>.
@@ -206,46 +205,69 @@
       <p>
 	These are remarkable ideas.  Of course, they are not without
 	precedent.  Many people have developed related ideas,
-	including William Ross Ashby, Douglas Engelbart, and Alan Kay,
-	to name but a few.  But, in my opinion, Victor's development
-	is unusually promising and deep.  I'm writing these notes to
-	help me understand what Victor is doing, how he's doing it,
-	and the most promising directions for further work.  I also
-	plan to relate <em>Kill Math</em> to my own creative work, and
-	hope it will help inspire some new directions in my work.
-      </p>
+	including <a href="http://vserver1.cscs.lsa.umich.edu/~crshalizi/notabene/ashby.html">William
+	Ross Ashby</a>, Douglas Engelbart, and Seymour Papert, to name
+	but a few.  But, in my opinion, Victor's development is
+	unusually promising and deep.  I'm writing these notes to help
+	me understand what Victor is doing, how he's doing it, and
+	some promising directions for further work.  I also intend to
+	relate <em>Kill Math</em> to my own creative work, and hope it
+	will help inspire some new directions.
 
       <p>
 	The notes were more difficult to write than I expected.  In
-	retrospect, I can see that while <em>Kill Math</em> is
-	certainly easy to read, it is in fact very challenging to
-	understand at the deeper level that would enable one to do
-	similar work.  (I've made this mistake with other works,
-	too.  <em>Mea culpa</em>. ) Part of the reason is that I have
+	retrospect, I can see that while <em>Kill Math</em> is easy to
+	read, it is very challenging to understand at the deeper level
+	that would enable one to do similar work.  (I make this
+	mistake with nearly every work I wish to understand
+	well.  <em>Mea culpa</em>. ) Part of the reason is that I have
 	much less design and programming experience than
-	Victor*<span class="marginnote" style="padding-top: 240px">*
-	And, I would guess, much more mathematical research
-	experience, which creates another kind of barrier to
+	Victor*<span class="marginnote" style="padding-top: 260px">*
+	And, I would guess, a different kind of experience with
+	mathematical research, which creates another barrier to
 	understanding.</span>, and the deeper I got, the more keenly I
 	felt this deficit.  More on this later.
-      </p>
 
       <p>
 	Through the remainder of these notes I will use the convention
 	that unmarked quotations are from <em>Kill Math</em>.  Quotes
 	from other sources will be explicitly marked.  
-      </p>
 
       <h2>Two examples: interactive difference equations and scrubbable numbers</h2>
 
+      <blockquote>
+	<em><strong>Historian Charles
+	Weiner, <a href="http://www.aip.org/history/ohilist/5020_5.html">interviewing</a>
+	physicist Richard Feynman, discussing Feynman's physics
+	notebooks:</strong> These are loose-leaf notebooks with each
+	page containing your work, everything that you asked
+	yourself... And so this represents the record of the
+	day-to-day work.
+
+	  <br>
+	<strong>Feynman:</strong> I actually did the work on the paper.
+
+	  <br>
+	<strong>[...]</strong>
+
+	  <br>
+	<strong>Weiner:</strong> Well, the work was done in your head
+	but the record of it is still here.
+
+	<strong>Feynman:</strong> No, it's not a record, not really,
+	it's working.  You have to work on paper and this is the
+	paper.  Ok?</em>
+      </blockquote>
+
+
       <p>
-	To make the above ideas more concrete, let me show two of the
-	examples that Victor creates.  The first is a video
-	demonstrating a medium for understanding difference equations.
-	The video is best watched fullscreened, which can be done by
-	clicking the four-arrow icon <img src="images/vimeo.JPG"
-	style="vertical-align: text-bottom;"/> in the bottom right of
-	the video player: <br/>
+	To make the ideas in the previous section more concrete, let
+	me show two prototypes that Victor has created.  The first is
+	a video demonstrating a medium for understanding difference
+	equations.  The video is best watched fullscreened, which can
+	be done by clicking the four-arrow icon
+	<img src="Images/vimeo.jpg" style="vertical-align:
+	text-bottom;"/> in the bottom right of the video player: <br/>
 	<iframe src="http://player.vimeo.com/video/85480838?portrait=0" 
 		width="600" height="337" frameborder="0" 
 		webkitallowfullscreen mozallowfullscreen allowfullscreen>
@@ -261,23 +283,22 @@
 	most crucially of
 	all, <em>play</em>*<span class="marginnote">* There is a
 	<a href="https://www.youtube.com/watch?v=Zkx1aKv2z8o">beautiful
-	talk</a> by <a href="http://acko.net/about/">Stephen
-	Wittens</a> where he talks about (and demonstrates) how
-	powerful play can be in mathematics.  You can see this too in
-	Seymour
+	talk</a> by <a href="http://acko.net/about/">Steven
+	Wittens</a> where he demonstrates vividly how powerful play
+	can be in mathematics.  Related ideas are explored in Seymour
 	Papert's <a href="http://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746">Mindstorms</a>.
 	My experience when learning a new area of mathematics is that
 	there is often a long period of time in which working with it
-	is a painful slog.  The simplest things are very difficult to
-	do.  But after many hours you go past some sort of threshold.
+	is quite painful.  The simplest things are very difficult to
+	do.  But after many hours you pass some sort of threshold.
 	Things begin to speed up, and it becomes very enjoyable to
 	work with the objects in your new domain; you become able to
-	play.  Well-designed new media may speed up this process of
-	getting-to-play.</span> with difference equations.  And with
-	enough exposure to this medium, we'd begin internalizing these
-	operations: we'd begin to think about difference equations in
-	this way."
-      </p>
+	play.  At that point, the rate at which you are learning
+	speeds up dramatically.  Well-designed media for thought may
+	speed up this process of getting-to-play.</span> with
+	difference equations.  And with enough exposure to this
+	medium, we'd begin internalizing these operations: we'd begin
+	to think about difference equations in this way."
 
       <p>
 	The difference equation medium is very interesting.  But it's
@@ -289,18 +310,20 @@
       <p>
 	Let me show the scrubbing calculator in action, solving a
 	problem that would ordinarily be solved with (what we think of
-	as) algebra.  You can details of the problem and its context
-	in the link in the last paragraph.  The basic gist is that
+	as) algebra.  You can see the details of the problem and its
+	context in
+	the <a href="http://worrydream.com/ScrubbingCalculator/">essay
+	linked</a> in the last paragraph.  The basic gist is that
 	Victor asks us to consider a (real) design problem that came
-	up when he was designing the graphics in a book.  The design
+	up when he was designing the graphics for a book.  The design
 	problem was to figure out how large to make the height of the
-	bars in a bar chart, in order that the chart fill up the
-	available space.  The size (768 px) of the available space as
-	well as the margins (63px and 140px) and the gaps between bars
-	(20px) were already known, but could be slightly adjusted if
-	necessary.  This problem is, of course, easily solved using
-	algebra.  Click on the play button below to see a
-	demonstration of a different approach:
+	horizontal bars in a bar chart, in order that the chart fill
+	up the available space.  The size (768 px) of the available
+	space as well as the margins (60px and 140px) and the gaps
+	between bars (20px) were already known, but could be slightly
+	adjusted if necessary.  This problem would, of course,
+	conventionally be solved using algebra.  Click on the play
+	button below to see a different approach:
       </p>
 
       <script type="text/javascript">
@@ -345,9 +368,8 @@
 	video, but just to spell it out: he's typing in his existing
 	constraints on the margins and gap, and making a guess for the
 	bar height.  Then he scrubs over the value for the bar height
-	until the answer on the right is what he wants, perhaps with
-	some minor adjustments to other quantities.
-      </p>
+	until the answer on the right is what he wants, with some
+	minor adjustments to other quantities.
 
       <p>
 	Here's another example, which illustrates some different
@@ -355,10 +377,9 @@
 	to split the bill for a road trip.  His friend Andy paid 2910
 	dollars during the trip, while he (Bret Victor) paid 426
 	dollars.  How much money does he owe his friend, in order that
-	the bill is split evenly?  To solve the problem, Victor
+	the bill be split evenly?  To solve the problem, Victor
 	"connects" two quantities in the equations, so they are tied
 	together:
-      </p>
 
       <div style="margin-top:20px; margin-left:40px;">
 	<div id="c" class="videoOverlay" 
@@ -376,31 +397,50 @@
 	</video>
       </div>
 
-      <p>There is more in
-	the <a href="http://worrydream.com/ScrubbingCalculator/">essay</a>:
-	Victor also adds operations to "lock" and "unlock" numbers in
-	the equations.  I won't discuss those operations here, since
-	we've already got quite a bit to be thinking about.  But those
-	operations are interesting, too.
+      <p>
+	Think about how you'd solve this problem ordinarily.  You'd
+	set up a system of two linear equations, take the difference
+	between the two equations, move terms from one side to the
+	other, and so on.  In other words, you'd go through a series
+	of complicated formal steps which seem almost completely
+	unrelated to your goal (unless you happen to have a great deal
+	of training).  It's as though you're standing on one side of a
+	park, looking over to the other side, and some teacher comes
+	along and tells you that to get to the other side, you first
+	need to walk in the opposite direction, up some back alley,
+	then insert a quarter in a machine, be sure to stop and pet
+	the dog, etcetera.  Provided you follow this special
+	incantation you are assured that you'll somehow end up where
+	you wanted to go.  It's black magic.  In ordinary algebra, the
+	operations performed do not obviously have very much to do
+	with the goal.  In the scrubbing calculator the operations you
+	perform are directly related to the goal.
 
       <p>
-	What should we make of these kinds of examples?
-      </p>
+	There is more to the scrubbing calculator
+	(<a href="http://worrydream.com/ScrubbingCalculator/">link</a>):
+	Victor also adds operations to "lock" and "unlock" numbers in
+	the equations.  I won't discuss those operations here, since
+	we've already got quite a bit to be thinking about.  But
+	they're interesting, too.
+
+      <p>
+	What should we make of these examples?
 
       <p>
 	As someone mathematically trained it's tempting to reflexively
 	respond: "That seems harder than solving the relevant
 	equations."  That's true if you've already spent a great deal
 	of time mastering traditional techniques for solving such
-	equations.  However, that's an unfair comparison, and it's not
-	clear whether someone learning this for the first time would
-	have more trouble with algebra or with learning the scrubbing
-	calculator.  I suspect that many would find the scrubbing
-	calculator easier, and some people would find it far easier.
-	There's an old joke in which a mathematics professor begins
-	posing a problem: "Suppose $x$ is equal to $15$...", only to
-	be interrupted by a student: "But professor, what if $x$ is
-	not equal to $15$?"  My own experience in talking about
+	equations.  However, that's also an unfair comparison, and
+	it's not clear whether someone learning this for the first
+	time would have more trouble with algebra or with learning the
+	scrubbing calculator.  I suspect that many would find the
+	scrubbing calculator easier, and some people would find it far
+	easier.  There's an old joke in which a mathematics professor
+	begins posing a problem: "Suppose $x$ is equal to $15$...",
+	only to be interrupted by a student: "But professor, what if
+	$x$ is not equal to $15$?"  My own experience in talking about
 	mathematics with others is that there are many intelligent
 	people with exactly this kind of block.  And when someone is
 	blocked in this way it's very difficult for them to really
@@ -408,48 +448,61 @@
 	expressions.
 
       <p>
-	Another typical of skeptical response to the scrubbing
-	calculator is to emphasize the <em>value</em> in learning to
-	use the abstract symbols.  Of course, there is great value in
-	that, but it's an exceptionally poor basis for comparison.
-	The value in the traditional approach is only gradually
-	revealed over years of mathematical training.  We should not
-	expect to understand the value of the scrubbing calculator all
-	at once, in our first reflexive response.  We would need to
-	develop the ideas in the scrubbing calculator much further in
-	order to understand the value in this alternative
-	approach*<span class="marginnote">* Much of the online
-	commentary directed at <em>Kill Math</em> completely misses
-	this point.  You have people enumerating all the great things
-	about traditional analytic methods.  Many of those people have
-	trained for years (or decades) with those analytic techniques,
-	yet have only a few minutes exposure to these alternative
-	techniques.  For many examples of this style of commentary,
-	see the
+	Another typical skeptical response to the scrubbing calculator
+	is to emphasize the <em>value</em> in learning to use the
+	abstract symbols.  Of course, there is great value in learning
+	to use the abstract symbols, but it's a poor basis for
+	comparison.  The value in the traditional approach is only
+	gradually revealed over years of mathematical training.  We
+	should not expect to understand the value of the ideas used in
+	the scrubbing calculator all at once, in our first reflexive
+	response.  We would need to develop the ideas in the scrubbing
+	calculator much further in order to understand the value in
+	this alternative approach*<span class="marginnote">* Much of
+	the online commentary directed at <em>Kill Math</em>
+	completely misses this point.  You have people enumerating all
+	the great things about traditional analytic methods.  Many of
+	those people have trained for years (or decades) with those
+	analytic techniques, yet have only a few minutes exposure to
+	the alternative techniques.  For many examples of this style
+	of commentary, see the
 	comments <a href="http://blog.mrmeyer.com/2011/bret-victors-kill-math-project/">here</a>.
-	Of course, detailed criticisms in this vein may be useful as a
-	way of
+	Of course, detailed criticisms in this vein may be stimulating
+	as a way of
 	<em>improving</em> the medium (see,
 	e.g., <a href="http://www.evanmiller.org/dont-kill-math.html">Evan
-	Miller's stimulating critique</a>) , but they have little
-	value as a means of evaluating the potential of the medium,
-	which is often the intent.<br>
+	Miller's essay</a>), but they have little value as a means of
+	evaluating the potential of the medium.  I must admit I find
+	it strange that there are people out there who believe they
+	must stridently defend a system of thought that gave us
+	electricity, the moon landings and the automobile, from (what
+	they perceive as) a determined attack by one guy armed with an
+	iPad.  Sheesh.<br><br>
 
-        (Incidentally, this erroneous approach to evaluating the
+        Incidentally, this erroneous approach to evaluating the
 	potential of anything new is so common, across so many fields,
 	that I wonder if it shouldn't be regarded as a cognitive bias,
 	along the lines of things like confirmation bias and the
-	fundamental attribution error. ) </span>.  In essence, we're
-	comparing a few minutes exposure to a medium developed by one
-	person with thousands of hours of training in a tradition that
-	has been developed over thousands of years by thousands of
-	people.  It's perhaps not so surprising that the latter has
-	some advantages!  But those advantages are irrelevant for the
-	purposes of making a comparison.  It's like trying to
-	understand cubism's potential to transform how we see merely
-	by looking at Braque's first cubist paintings:
+	fundamental attribution error.  This "foresight bias" seems to
+	be correlated, in my experience,
+	with <a href="http://en.wikipedia.org/wiki/Hindsight_bias">hindsight
+	bias</a>: looking at the past and seeing how it all obviously
+	came out just so.  </span>.  In essence, we're comparing a few
+	minutes exposure to a medium developed by one person with
+	thousands of hours of training in a tradition that has been
+	developed over thousands of years by thousands of people.
+	It's perhaps not so surprising that the latter has some
+	advantages!  But focusing myopically on those advantages
+	doesn't help us see what new and different potential there may
+	be in the scrubbing calculator.  It's like trying to
+	understand cubism's potential to transform how we see by
+	looking only at Braque's first cubist paintings:
 
-	<img src="Images/Braque.JPG">
+      <p>
+	<img src="Images/Braque.jpg">
+
+      <p>
+	Good luck with that!
 
       <p>
 	What makes the scrubbing calculator seem remarkable to me is
@@ -466,7 +519,7 @@
       <p>
 	In the case of the scrubbing calculator these atomic
 	operations are introduced as a means to a particular end,
-	namely allowing people to solve algebraic problems while
+	namely, allowing people to solve algebraic problems while
 	working with concrete numbers:
 
       <blockquote><em> This work is about allowing people to solve
@@ -488,27 +541,27 @@
       </blockquote>
 
       <p>
-	This passage emphasizes rather explicitly how the computer
-	enables new atomic operations.  It strikes me that although
-	these atomic operations were introduced in response to a
-	specific problem, they can potentially be repurposed and used
-	to serve other ends.  In other words, we can take these new
-	atomic operations and try them out in new contexts, trying to
-	push them as far as they can go.  The most powerful will, no
-	doubt, turn out to be extremely useful in a wide variety of
+	This passage emphasizes the computer's ability to enable new
+	atomic operations.  It strikes me that although these atomic
+	operations were introduced in response to a specific problem,
+	they can potentially be repurposed and used to serve other
+	ends.  In other words, we can take these new atomic operations
+	and try them out in new contexts, trying to push them as far
+	as they can go.  The most powerful will, no doubt, turn out to
+	be extremely useful in a wide variety of
 	contexts*<span class="marginnote">* There's a related
 	phenomenon in mathematics: surprisingly often, famous results
-	began life as lemmas in papers whose "main" result was some
-	now largely forgotten theorem.  Instead, it was the lemma,
-	originally just waystation along the way to proving the
-	theorem, which was found to be of utility in many other
-	contexts.  You might ask: why not just aim at the lemma?  I'm
-	not sure it can be done.  The utility of such lemmas is
-	usually that they can help solve a wide variety of hard
-	problems.  And so it is natural that they are first
-	discovered <em>en route</em> to solving a specific hard
-	problem.  Absent such problems, I don't know that it's easy to
-	determine which tools will be most powerful. </span>.
+	began life as lemmas in papers whose "main" result is now
+	forgotten.  Instead, it was the lemma, originally just a
+	waystation along the way to proving some "important" theorem,
+	which was found to be of utility in many other contexts.  You
+	might ask: why not just aim at the lemma?  I'm not sure it can
+	be done.  The utility of such lemmas is usually that they can
+	help solve a wide variety of hard problems.  And so it is
+	natural that they are first discovered <em>en route</em> to
+	solving a specific hard problem.  Absent such problems, I
+	don't know that it's easy to determine which tools will be
+	most powerful. </span>.
       </P>
 
       <p>
@@ -529,15 +582,19 @@
 	as our medium.  Changing the medium enables an expansion of
 	those representations and operations:
 
-      <img src="Images/expansion.png">
+      <p>
+	<img src="Images/expansion.png">
 
       <p>
 	Representations like the scrubbable numbers and operations
 	like connecting two numbers are examples of this expansion.
 	But, of course, there's no more reason for them to be an
-	endpoint than there was
-	for <a href="http://en.wikipedia.org/wiki/Babylonian_numerals">Babylonian
-	numerals</a>.
+	endpoint than there was for Roman numerals to be the endpoint
+	of what we did with paper and
+	pencil*<span class="marginnote">* The Romans, I believe,
+	actually used papyrus and a primitive form of pen.  But those
+	media seem to have offered very similar expressive
+	capabilities to today's paper and pencil. </span>.
 
       <p>
 	One problem with the diagram above is that it conveys a
@@ -558,13 +615,24 @@
 	say, what kinds of interaction can you do with your elbow
 	&ndash; may be enlightening.  And, of course, you can turn it
 	around, and ask questions like: what hardware and interface
-	would let us best explain general relativity?  Or molecular
-	biology?  Or quantum mechanics*<span class="marginnote">* Had
-	this question been seriously asked in 1970 I suspect quantum
-	computers would have been invented earlier.  Feynman's
-	pioneering 1982 paper on quantum computing started from a
-	related question, namely: what kind of computer would you need
-	to use to <em>simulate</em> physics?</span>?
+	would let us best explain (or explore) general relativity?  Or
+	molecular biology?  Or quantum
+	mechanics*<span class="marginnote">* Had this question been
+	seriously asked in 1970 I suspect quantum computers would have
+	been invented earlier.  Feynman's pioneering 1982 paper on
+	quantum computing started from a related question, namely:
+	what kind of computer would you need to use
+	to <em>simulate</em> physics?</span>?
+	
+      <p>
+	A second problem with the diagram above is that the
+	representations and operations currently possible with a
+	computer are not, strictly speaking, a superset of the
+	representations possible with paper and pencil (and related
+	media, such as whiteboards).  There are important ways in
+	which the latter media remain superior.  What would we need to
+	make computers entirely superior to paper and pencil?  To a
+	whiteboard or blackboard?
 
       <h2>Scrubbable numbers over many levels of granularity</h2>
 
@@ -582,11 +650,22 @@
 	adjustments at different levels of granularity?</em>
       </blockquote>
 
+
       <p>
-	Here's the outcome of my first set of attempts at this
-	exercise.  Mouseover either number on the left of the equation
-	below, click on one of the revealed icons, and adjust the
-	number.
+	In this section I describe the outcome of my first set of
+	attempts at this exercise.  I'm not a designer and have very
+	limited experience writing programs that run in the browser,
+	so my progress has been limited.  The main value for me has,
+	rather, been in gaining more understanding for what's involved
+	in the design process, in particular the rich set of questions
+	thrown up in tackling what seems like (but turned out not to
+	be) a mundane problem, and the value of iterative analysis.
+
+      <p>
+	Here's a first, very rough sketch.  In the equation below,
+	mouseover either number on the left of the equation, click on
+	one of the revealed icons, and hold down the mouse button
+	while adjusting the number.
 
       <div class="equation">
 	<scrubbable-number id="n1">21</scrubbable-number> +
@@ -600,21 +679,20 @@
 	numbers, because we have the ability to adjust numbers both
 	linearly and exponentially.  However, it has a number of
 	deficiencies.
-      </p>
 
       <p>
 	Some of the deficiencies are relatively minor problems with
-	the look and feel, including: (1) the expansion and
+	the look and feel, including: (1) The expansion and
 	contraction of the scrubbable numbers causes distracting
-	changes to the overall layout of the equation, and would
-	perhaps work better if the icons were <em>below</em> rather
-	than alongside the numbers; (2) the icons need to be more
-	responsive, perhaps changing in more obvious way to indicate
-	they've been selected, and the colour choices could do with
-	more work; (3) there are some inconsistencies in the way
-	highlighting is done that should be ironed out.  It's easy to
-	make progress on these and other problems with just a little
-	more work.
+	changes to the overall layout of the equation, which need to
+	be fixed.  It would also perhaps work better if the icons
+	were <em>below</em> rather than alongside the numbers; (2) The
+	icons need to be more responsive, perhaps changing in more
+	obvious way to indicate they've been selected, and the colour
+	choices could do with more work; (3) There are some
+	inconsistencies in the way highlighting is done that should be
+	ironed out.  It's easy to make progress on these and many
+	other problems with just a little more work.
 
       <p>
 	However, one really serious deficiency is that this approach
@@ -667,34 +745,34 @@
 	exploration by finding the right order of magnitude, and the
 	most significant digit, then explore to find the second most
 	significant digit, and so on.
-      </P>
 
       <p>
 	Of course, there are still many deficiencies.  The design
 	could do more to unobtrusively cue the user as to the expected
 	behaviour.  We have limited range of motion on the left, which
 	makes decreasing numbers somewhat awkward.  I explored several
-	response functions, and this worked the best on my machine
-	(with its particular setup of mouse and screen resolution).
-	However, I wouldn't be surprised if a thorough systematic
-	investigation of response functions resulted in a better
-	response function.
+	response functions, and the one implemented is the one that
+	worked the best on my machine, with its particular mouse
+	behaviour and screen resolution.  However, I wouldn't be
+	surprised if a thorough systematic investigation resulted in a
+	better response function.
 
       <p>
-	More seriously, the above demonstration has the problem that
-	the context is wrong.  When doing this kind of design work we
-	don't need to explore over many orders of magnitude; it's the
-	wrong tool for the problem.  Let's look briefly at a better
-	problem.
+	A serious problem with the above demonstration is that the
+	context is wrong &ndash; we simply don't need to vary the
+	margins and so on over many orders of magnitude.  It'd be
+	better to look at a problem which provides a more informative
+	context.
 
       <p>
-	It's a problem about world population.  Let's assume that
-	world population growth is 1 percent per year, and we're
-	interested in knowing: what does the population need to be in
-	order that in 20 years time the population will pass 10
-	billion?  This problem <em>is</em> a little artifical, but
-	we'll still learn some useful things by considering it.  Try
-	scrubbing over the first number in the following equation:
+	Consider the following problem about world population.  Let's
+	assume that world population growth is 1 percent per year, and
+	we're interested in knowing: what does the population need to
+	be today, in order that in 20 years time the population will
+	pass 10 billion?  This problem is, of course, somewhat
+	artifical, but we'll still learn some useful things by
+	considering it.  Try repeatedly scrubbing over the first
+	number in the following equation:
 
       <div class="equation">
 	<scrubbable-number2 id="n3">7000000000</scrubbable-number2> people
@@ -710,20 +788,49 @@
 	lower, then one or two orders of magnitude lower, and so on.
 
       <p>
-	Another natural idea to explore is allowing the growth rate to
-	be scrubbable. A challenge here is that the natural way to
-	scrub the growth rate involves only a linear response (the
-	same is true for the "20 years" term).  It'd perhaps make
-	sense to cue the user to the difference between numbers
-	needing a linear versus a nonlinear response.  How could we do
-	that in a natural way?
+	Another idea is to give the slider some notion
+	of <em>momentum</em> and <em>damping</em>.  In particular, if
+	you move the mouse quickly that usually means you want
+	to <em>increase</em> the rate at which the number is changing,
+	while if you move the mouse slowly that usually means that you
+	want to <em>decrease</em> the rate at which the number is
+	changing.  I expect considerable experimentation would be
+	necessary to get this to work well, but it might be worth the
+	effort.  Note that there has been much prior work on similar
+	notions in user interfaces, and it may be worth looking at
+	that work.
 
       <p>
-	In my first experiments with the above, I wrote the growth
-	rate as $1.01$ per year.  A challenge in scrubbing such
-	numbers is that we both want to be able to
-	increase <em>and</em> decrease the scale of the scrubbing.  
-	How could that be achieved? 
+	Another natural idea to explore is allowing the growth rate
+	(or number of years) to be scrubbable.  This gives rise to an
+	interesting problem.  Arguably, the natural way to scrub the
+	growth rate involves only a linear response.  If we take this
+	point of view, then we'd need to figure out some way of cueing
+	the user to the difference between srubbable numbers with a
+	linear versus a nonlinear response.
+	
+      <p>
+	The problem with this point of view is that we don't know in
+	advance what type of response is needed.  In an ideal world,
+	we would have a single, unified interface.  Unfortunately,
+	when I tried using the nonlinear response with the growth rate
+	it felt unnatural: it changed too quickly.  I also tried
+	slowing things down, by making changes linear over two orders
+	of magnitude (instead of just one).  That felt unnatural in a
+	different way.  It's possible, however, that with further
+	experience one or both these options might come to seem more
+	natural, and to be acceptable.  Or perhaps more ideas are
+	needed.
+
+      <p>
+	Another problem with our current scrubbable numbers is that
+	there is (currently) a minimal scale: the minimal increment or
+	decrement in the examples above is $1$.  You could easily
+	change this, to be, say, $0.1$ or $0.01$, but there would
+	still be a minimal scale.  And for some problems we don't know
+	in advance what the minimal scale should be.  Can we find some
+	way to be able to both increase <em>and</em> decrease the
+	scale of the scrubbing?
 
       <p>
 	I won't try to address all these questions here.  Still, it's
@@ -747,14 +854,11 @@
 
       <p>
 	Let me begin by pointing out the obvious, so I don't lose
-	sight of it*<span class="marginnote">* This perhaps seems
-	superfluous, but I find I often lose sight of the obvious when
-	I get confused, as inevitably happens.</span>:
-	of <em>course</em> the ideas in <em>Kill Math</em> are
-	radically different than in the other systems.  This is
-	immediately evident upon simply looking at the prototypes.
-	The problem is to understand and articulate what the
-	differences are, and what is new in <em>Kill Math</em>.
+	sight of it: of <em>course</em> the ideas in <em>Kill
+	Math</em> are radically different than in the other systems.
+	This is immediately evident upon simply looking at the
+	prototypes.  The problem is to understand and articulate what
+	the differences are, and what is new in <em>Kill Math</em>.
 
       <p>
 	For concreteness I will begin my analysis by
@@ -781,16 +885,16 @@
 	</ul>
 
       <p>
-	What is new here, compared to 19th century mathematics, is
-	that: (a) the solution to the problems is automated, and can
-	be done with no (or little) human intervention; and (b)
-	the <em>scale</em> at which these activities can be carried
-	out &ndash; it is not uncommon to use <em>Mathematica</em> to
-	deal with expressions involving thousands of terms.  Both
-	these abilities qualitatively change how people engage with
-	mathematics, dramatically enlarging both the class of problems
-	they're willing to attack, and the class of problems they're
-	able to solve.
+	This looks like 19th century mathematics.  However, what is
+	new here is that: (a) the solution to the problems is
+	automated, and can be done with no (or little) human
+	intervention; and (b) the <em>scale</em> at which these
+	activities can be carried out &ndash; it is not uncommon to
+	use <em>Mathematica</em> to deal with expressions involving
+	thousands of terms.  Both these abilities qualitatively change
+	how people engage with mathematics, dramatically enlarging
+	both the class of problems they're willing to attack, and the
+	class of problems they're able to solve.
       </p>
 
       <p>
@@ -813,26 +917,21 @@
 	Are there any ways in which <em>Mathematica</em> does change
 	what we think mathematics is?  Well, <em>Mathematica</em> does
 	introduce several new fundamental objects and operations into
-	mathematics.  In particular, graphs, animations, and notebooks
-	are all new fundamental objects*<span class="marginnote">* Or
-	nearly so.  What I mean by fundamental object is that the
-	object should have, at the least, a reasonably powerful
-	interface allowing it to be inspected, manipulated, and
-	related to other fundamental objects.  This is true, with some
-	qualifications, for graphs, animations, and notebooks
-	in <em>Mathematica</em>.</span>, with associated fundamental
-	operations.  Of course, things like graphs and notebooks (less
-	so animations) have long been part of mathematics.  But the
+	mathematics, when compared to 19th century mathematics.  In
+	particular, graphs, animations, and notebooks are all new
+	fundamental objects, with associated fundamental operations.
+	Of course, things like graphs and notebooks (less so
+	animations) have long been part of mathematics.  But the
 	benefit in <em>Mathematica</em> is that we
 	can <em>operate</em> on them, that is, we can perform
 	programmatic operations involving graphs, animations, and
 	notebooks.  Put another way, we can treat these
-	as <em>things</em> in a way this is not possible with paper
-	and pencil.  On paper, a graph is a tremendously complex
-	aggregate typically involving hundreds of strokes of the pen.
-	On a computer it may be treated as a single object which can
-	be manipulated in powerful ways using single commands.
-      </p>
+	as <em>things</em> in a way impossible with paper and
+	pencil. On paper, a graph is a tremendously complex aggregate
+	typically involving hundreds of strokes of the pen.  It's
+	difficult and time-consuming to manipulate.  On a computer it
+	may be treated as a single object which can be manipulated in
+	powerful ways using single commands.
       
       <p>
 	Ideally, these new objects will be data structures with a
@@ -853,9 +952,9 @@
 	operations that could be performed on these objects?</em>
 	And: <em>Are there powerful new data structures we can build
 	from these objects (and associated operations on those data
-	structures)?</em>  When we do this we make it possible to
-	think in powerful ways about these new objects.  We are, in a
-	real way, enlarging the space of thoughts we can
+	structures)?</em>  By doing this we make it possible to think
+	in powerful ways about these new objects.  We are, in a real
+	way, enlarging the space of thoughts we can
 	think*<span class="marginnote">* Incidentally, there is
 	another class of new objects added in <em>Mathematica</em>,
 	beyond notebooks, graphs, and animations.  That's <em>very
@@ -895,8 +994,8 @@
       </p>
 
       <p>
-	To some extent, <em>Mathematica</em> looks to me like what you
-	get when a very competent and creative traditionally trained
+	<em>Mathematica</em> looks to me like what you get when a very
+	competent and creative traditionally trained
 	mathematician*<span class="marginnote">* Wolfram's PhD was, in
 	fact, in theoretical physics. For my current purposes, though,
 	the difference doesn't much matter.  (Indeed, there's a lot of
@@ -914,8 +1013,8 @@
 	By contrast, the prototypes in <em>Kill Math</em> look to me
 	like what you get when a very competent and creative designer
 	starts designing systems for doing mathematics.  What's at
-	issue is, in fact, the fundamental objects, operations and
-	representations that we have.  Think about some of the
+	issue is what fundamental objects, operations and
+	representations we should be using.  Think about some of the
 	operations introduced in the prototypes above:
       </P>
 
@@ -941,37 +1040,44 @@
 	enables new kinds of exploration and play.  That may sound
 	like an exaggeration, and perhaps it is when we're dealing
 	with very simple prototypes, but as the prototypes become more
-	sophisticated I this it makes more and more sense to think of
+	sophisticated it makes more and more sense to think of
 	scrubbable numbers as truly a different type of object.
 	Imagine you are playing a first-person shooter game, but
 	instead of directly controlling the motion, you instead
 	repeatedly have to type in an angle describing the direction
 	you're facing.  This would change your relationship to the
-	character, and not just in the obvious sense that it would
-	slow down the rate at which you could control the character;
-	it would change the sense of control, and give you much less
-	visceral feedback.  Scrubbable numbers point the way toward
-	a different relationship with numbers.
+	game, and not just in the obvious sense that it would slow
+	down the rate at which you could control the game; it would
+	change the sense of control, and give you much less visceral
+	feedback.  Scrubbable numbers point the way toward a different
+	relationship with numbers.
 
       <p>
-	This sounds very wishy-washy and touchy-feely.  Yet I think
-	it's at the heart of what it means to understood
-	something. Littlewood is supposed*<span class="marginnote">*
-	The story is amusing. Littlewood was reading the proofs of
-	some remarks by Hardy on Ramanujan: "as someone said, each of
-	the positive integers [etc]".  Littlewood responded: "I
-	wondered who said that; I wish I had".  In the final version
-	it read "it was Littlewood who said...".  There is more to the
-	story, which is told in Littlewood's
+	This all sounds very wishy-washy and touchy-feely: the
+	"relationship" we have with numbers?  Yet I think it's at the
+	heart of what it means to understand something. Littlewood is
+	supposed*<span class="marginnote">* The story is
+	amusing. Littlewood was reading the proofs of some remarks by
+	Hardy on Ramanujan: "as someone said, each of the positive
+	integers [etc]".  Littlewood responded: "I wondered who said
+	that; I wish I had".  In the final version it read "It was
+	Littlewood who said...".  Littlewood: "What had happened was
+	that Hardy had received the remark in silence and with a poker
+	face, and I wrote it off as a dud.  I later taxed Hardy with
+	this habit; on which he replied: `Well, what is one to do, is
+	one always to be saying "damned good"?' To which the answer is
+	`yes'.".  The story is from Littlewood's
 	beautiful <a href="http://en.wikipedia.org/wiki/A_Mathematician's_Miscellany">Miscellany</a>.</span>
-	to have remarked that "every positive integer is one of
-	Ramanjuan's personal friends".  That's a statement about the
-	relationship Ramanujan had with the integers.
+	to have said of Ramanujan that "each of the positive integers
+	was one of his personal friends".  That's a statement about
+	the relationship Ramanujan had with the integers.  It's the
+	quality of that relationship which was, in part, why Ramanujan
+	was such a great mathematician.
 	
 
       <p>
-	Returning to <em>Kill Math</em>, and to sum up, where it
-	differs from <em>Mathematica</em> is in focussing on
+	Returning to <em>Kill Math</em>, and to sum up, an important
+	way it differs from <em>Mathematica</em> is in focussing on
 	identifying new types of mathematical object, new
 	representations (both for new and old objects), and new
 	operations (again, both for new and old objects).  All this
@@ -981,14 +1087,15 @@
 	on <em>outsourcing cognition</em>: doing the kind of cognitive
 	tasks mathematicians have always done, but much faster, and
 	more reliably.  The expansion of what mathematics is is a more
-	incidental goal.  Both goals are, of course, very
+	incidental goal.  Both goals are, of course,
 	worthwhile; <em>Mathematica</em> (and systems like it) are,
 	for the time being, much more mature.  It is interesting to
-	consider the possibility of some future system
+	imagine some future system which takes both goals very
+	seriously.
 
       <p>
-	<strong>A parenthetical remark on notebooks:</strong> The
-	notebooks are interesting as a new way to represent and
+	<strong>A parenthetical remark on notebooks:</strong>
+	Notebooks are interesting as a new way to represent and
 	experience a collection of mathematical ideas.  A nice example
 	to convey the flavour comes from this
 	<a href="http://nbviewer.ipython.org/url/norvig.com/ipython/Economics.ipynb">iPython
@@ -999,7 +1106,7 @@
 	execute it.  When you do that, what the notebook offers is
 	an <em>experience</em> of certain important mathematical
 	ideas.  Another person can go in and begin to tweak and extend
-	and even transform the ideas Norvig is expressing.  So the
+	and even transform the ideas Norvig is expressing.  The
 	notebook provides a vivid demonstration of counter-intuitive
 	results, which can provoke questions, and provide a relatively
 	easy way for a person to then answer those questions.  In
@@ -1011,11 +1118,10 @@
 	been created with 19th century tools.  But it would have been
 	pretty darn difficult to achieve, and hard to scale the
 	experience.  With <em>Mathematica</em> or a tool like ipython
-	it becomes much easier.  It's not yet trivial, though, since
-	while playing with short Python scripts is easier than
-	conventional mathematical modelling, it's still a relatively
-	difficult intellectual activity.
-      </p>
+	it becomes much easier.  Note, however, that while playing
+	with short Python scripts is easier than conventional
+	mathematical modelling, it's still a relatively inaccessible
+	intellectual activity.
 
 
       <p>
@@ -1053,7 +1159,7 @@
 	and proofs: these become things that can be inspected,
 	manipulated, and related to other objects.  However, I do not
 	know to what extent this sort of extension is the raison
-	d'être of these systems, and to what extent it's simply an an
+	d'être of these systems, and to what extent it's simply an
 	unintended consequence of other design decisions.
 
       <h2>Moving theorems into the user interface</h2>
@@ -1076,7 +1182,7 @@
 	develop a user interface which reifies those theorems in a
 	powerful way, providing the user with cues that help them
 	reason, and representing mathematical objects in ways that
-	help suggest the relationships they obey.
+	help suggest the relevant operations and relationships.
 
       <p>
 	Knuth <a href="http://www.jstor.org/discover/10.2307/2318994">once
@@ -1095,17 +1201,20 @@
       <p>
 	We can go much further.  Theorems are traditionally presented
 	as static statements about the relationship between
-	mathematical objects.  But the static nature of such theorems
-	is a consequence of historical accidents about the media we've
-	used to represent mathematics, not of the fundamental nature
-	of mathematics.  We could equally well have theorems which are
-	actively reified in the environments in which we think; they
-	respond to what we do, they cue us when needed.  That is,
-	they're visible, active parts of the mathematical process.
+	mathematical objects.  But the static nature of
+	theorems-of-statements is a consequence of historical
+	accidents about the media we've used to represent mathematics,
+	not of the fundamental nature of mathematics.  We could
+	equally well have theorems which are actively reified in the
+	environments in which we think; they respond to what we do,
+	they cue us when needed.  That is, they're visible, active
+	parts of the mathematical process.  The theorems start to
+	become part of the mathematical objects themselves.  This
+	point of view seems to me to be much more natural.
 
       <p>
-	Let me give an example that at least starts to hint at what
-	I'm suggesting.  It's not what we'd usually call a
+	Let me give an example that moves a tiny, tiny bit in this
+	direction.  It's not what we'd usually call a
 	theorem*<span class="marginnote">* I'm really using the word
 	"theorem" as shorthand for "non-trivial mathematical
 	connection".</span>, but it's a very simple example of the
@@ -1118,7 +1227,7 @@
 	changes*<span class="marginnote">* This design is not mine,
 	nor do I know where the idea originated (I have seen
 	variations on this idea many times, in slightly different
-	formats).</span>.
+	forms).</span>.
       
       <p>
 	<button id="startSineAnimation" 
@@ -1131,37 +1240,48 @@
       <script src="sine.js"></script>
 
       <p>
-	As I said above, this starts to hint at what I'm talking
-	about.  It does provide a nice, concrete illustration of a
-	fact that many students don't pick up on.  One shortcoming is
-	that it's about <em>explanation</em>, not <em>discovery</em>.
+	This provides a vivid, concrete demonstration of a connection
+	that many students miss, even after spending tens or hundreds
+	of hours "learning trigonometry".
+
+      <p>
+	While the demonstration is nice, one shortcoming is that it's
+	primarily about <em>explanation</em>, not <em>discovery</em>.
 	Explanation is valuable, but it's also a much less challenging
 	context than discovery.  When you're doing discovery <em>you
 	don't know what results to apply</em>.
 
       <p>
-	To unpack that a bit further, let me discuss another fun
-	example:
+	To unpack that a bit further, let me discuss another example:
 	<a href="http://euclidthegame.org/">Euclid: The Game</a>.  In
 	level 1 of the game, the player is presented with two points,
 	A and B, shown below:
-	
+
+      <p>
 	<img src="Images/euclid_1.jpg">
 
-      <p> They are asked to use five tools &ndash; the five icons on
-	the top left &ndash; to construct an equilateral triangle.
+      <p> The player is asked to use five tools &ndash; the five icons
+	on the top left &ndash; to construct an equilateral triangle.
 	The tools do things like inserting a line segment, or
 	constructing a circle with a specified center and specified
 	edge point (which could be, for example, points A and B).  By
-	using those tools appropriately we can construct an
-	equilateral triangle.
+	using those tools in just the right way, we can construct an
+	equilateral triangle as follows:*<span class="marginnote">*
+	The annotations &ndash; "Smart!", "Well done!" <em>etc</em>
+	&ndash; are not mine.  They're encouragement the game gives
+	you along the way, if you're making the right moves.</span>
 
       <p>
-	Marvellous!  We now know something new: we've learnt how to
-	use those elementary tools to construct an equilateral
-	triangle.  Here's the next level of the game:
-      <p>
 	<img src="Images/euclid_2.jpg">
+
+      <p>
+	So we now know something new: we've learnt how to use the
+	elementary tools to construct an equilateral triangle.  Here's
+	the next level of the game:
+
+      <p>
+	<img src="Images/euclid_3.jpg">
+
       <p>
 	If you look closely, you'll see that there is a new icon in
 	the top row, representing our ability to construct an
@@ -1171,26 +1291,28 @@
 	about different mathematical objects.
 
       <p>
-	This is a nice idea, but has many shortcomings as implemented.
-	In the game as shown, the capabilities we add are relatively
-	opaque.  A user can click around for a while, get lucky, and
-	add an extra tool into their geometric kit.  They do not
-	necessarily understand why what they did worked.  Oftentimes
-	it's that understanding which is really valuable, and which we
-	most want people to internalize.  But that process of
-	understanding is <em>not</em> *<span class="marginnote">* It
-	might be possible to improve the process of understanding by
-	turning the game into <em>Euclid Golf</em>: challenge people
-	to find constructions that are the <em>simplest possible</em>
-	(e.g., required least effort, in some natural metric).  The
-	requirement of minimizing the constructions will tend to
-	increase understanding, as people take their initial,
-	imperfect solutions, and try to understand what is essential,
-	and what is cruft that can be eliminated.  I'm not sure this
-	would work: many of the "random" solutions that people are
-	producing are already minimal or near-minimal.  But maybe
-	there's the seed of an idea here.  Might be a nice future
-	project.</span> not what's emphasized in the current game.
+	Many of the ideas in the game could be taken further.  While
+	playing I often didn't understand my own puzzle solutions very
+	well.  I'd play around for a while, develop some
+	understanding, but also (often) get a little bit lucky.  The
+	result was that I'd add an extra tool into my geometric kit,
+	without always understanding in depth why what I'd done
+	worked.  It might aid understanding if the game recorded
+	constructions, so that we can replay and edit those
+	constructions, and, perhaps, do other sorts of analysis.  For
+	instance, it might be possible to turn the game
+	into <em>Euclid Golf</em>: challenge people to find
+	constructions that are the <em>simplest possible</em> (e.g.,
+	required least effort, in some natural metric).  So you'd be
+	told "You solved this puzzle with 5 operations, but it can be
+	done in 4".  The requirement of minimizing the constructions
+	will tend to increase understanding, as people take their
+	initial, imperfect solutions, and try to understand what is
+	essential, and what is cruft that can be eliminated.  I'm not
+	sure this would work: many of the "random" solutions that
+	people are producing are already minimal or near-minimal.  But
+	there is, at least, the seed of an idea here, which might make
+	a nice future project.
 
       <p>
 	Another problem is that we know so much.  Think of all the
@@ -1205,23 +1327,27 @@
 	$n$ to denote a positive integer.  In an ideal mathematical
 	super-notebook, we'd potentially see $n$ in many different
 	ways. For instance, perhaps the most famous representation is
-	that every such integer is a unique product of
-	primes*<span class="marginnote">* Note, by the way, that I'm
-	not saying that when you write down an integer &mdash; say, 91
-	&mdash; you should be able to see its prime factorization (7 x
-	13).  I'm speaking more abstractly: every integer $n$ has a
-	unique prime factorization $p_1^{m_1} p_2^{m_2} \ldots
-	p_k^{m_k}$.  We should easily be able to reason about these
-	alternate representations.</span>.  But it's just one of
-	thousands of representations known for positive integers.
-	Which representations are relevant?  
+	that every positive integer is a unique product of
+	primes*<span class="marginnote" style="padding-top: 20px">*
+	Note, by the way, that I'm not saying that when you write down
+	an integer &mdash; say, 91 &mdash; the system you're using
+	should immediately show you its prime factorization, 7 x 13
+	(although this might also be useful).  I'm saying that it
+	should be possible to tell your system "Consider a positive
+	integer, $n$,...", without specifying its value.  The system
+	might then remind you that $n$ has a unique prime
+	factorization $p_1^{m_1} p_2^{m_2} \ldots p_k^{m_k}$, and help
+	you reason with this and other alternate
+	representations.</span>.  But that's just one of thousands of
+	representations known for positive integers.  How do we know
+	which representations are relevant in any given context?
 	
       <p>
 	The art of mathematics is very often in choosing which
 	representation to apply in order to obtain insight.  A good
 	mathematician internalizes many different representations,
-	understands how they relate to one another, in what contexts
-	they tend to be applied, and how.  A good user interface would
+	understands how they relate to one another, and in what
+	contexts they tend to be applied.  A good user interface would
 	reflect this plethora of possibilities, and help hint or cue
 	you to use the right representation at the right time.  This
 	is what I was referring to above when I said that explanation
@@ -1232,61 +1358,66 @@
 	interfaces for explanation than for discovery.
 
       <p>
-	So I don't immediately see how to design a user interface for
-	discovery.  I've made a few initial on-paper attempts, working
-	naively, and they have not worked so well.  I may recount this
-	in future notes &ndash; it's worth thinking about what went
-	wrong.  Certainly, this is a problem deserving sustained
-	effort!  I will make three comments that occurred to me while
-	working, however.
+	I've made a few initial on-paper attempts at user interfaces
+	for discovery.  I learnt a lot while doing this work, but the
+	resulting designs were rather unsatisfactory.  I may recount
+	some experiments along these lines in future notes &ndash;
+	it's worth thinking about what went wrong.  Certainly, this is
+	a problem deserving sustained effort!  I will make three
+	comments that occurred to me while working, however.
 
       <p>
-	First, in terms of the richness of the user interface needed
-	to do discovery: there may be a considerable advantage to
-	using a 3d environment, like that provided by the Oculus Rift.
-	I expect that having 3 spatial dimensions will make it
-	possible for designers to create interfaces that make it
-	possible for users to work in a far richer and more complex
-	choice environment than is currently the case; enough to make
-	a dramatic qualitative change in the experience.
+	First, on the richness of the user interface needed to do
+	discovery: there may be a considerable advantage to using a 3d
+	environment, like that provided by the Oculus Rift.  Having 3
+	spatial dimensions will enable interfaces that let users work
+	in a far richer and more complex choice environment than is
+	currently the case; enough to make a dramatic qualitative
+	change in the experience.
 
       <p>
-	Second, I proceeded by picking a piece of simple but genuine
-	mathematics where it's possible to give a plausible account of
-	discovery.  I found that having an existing narrative of
-	discovery helped in stimulating user interface ideas.  My
-	initial experiments were with the main result from
+	Second, I found it helpful to begin my experiments by picking
+	a piece of simple but genuine mathematics where it's possible
+	to give a plausible account of discovery.  Having an existing
+	narrative of discovery helped in stimulating user interface
+	ideas.  My initial experiments were with the main result from
 	a <a href="http://arxiv.org/abs/quant-ph/9909020">paper I
 	wrote in 1999</a>.  It solves a simple but fundamental problem
 	about the representation of states in quantum mechanics.  The
 	benefits of this were: (a) I have a pretty good idea of how
 	the result was discovered*<span class="marginnote">* This
-	sounds facetious, but is not; I don't think we really know
-	what's going on in our </span>; (b) the argument is extremely
-	simple; (c) it's an argument based almost entirely around
-	several switches of representation.
+	sounds facetious, but is not.  I don't think we really know
+	what's going on in our own heads when we make a discovery. It
+	would not surprise me if the most important factors are
+	largely unconscious.</span>; (b) the argument is extremely
+	simple; (c) it's an argument based largely on switches of
+	representation.  In particular, I made use of a representation
+	theorem that was not common knowledge in the quantum physics
+	community at the time.
 
       <p>
 	Third, it seems to me that <em>an environment for doing
 	mathematics needs an exquisite, supremely flexible and
-	expressive type system</em>.  I say this with some
-	trepidation, since theorists of programming languages have
-	developed a theory of types, but that really doesn't seem to
-	be what I'm talking about.
+	expressive type system</em>.  
       </p>
 
       <p>
-	Let me see if I can explain what I mean by this.  Suppose I'm
-	investigating a problem in quantum computing, and in the
-	course of the problem I encounter some matrix, $M$, which I
-	realize is central to the problem.  As soon as I see such a
-	matrix, all sorts of lights go &ndash; I will have in mind
-	results like: (a) the singular value decomposition; (b) the
-	Schur decomposition; (c) the fact that the matrix has at least
-	one eigenvector (if it's a complex matrix), and so on.  But I
-	may suspect that the matrix is Hermitian.  Often that can be
-	proved with just a little work.  If I can do that, then I
-	immediately add a few extra facts: (d) the matrix is
+	Let me see if I can explain what I mean by this.  First, what
+	I'm not saying: I'm not talking about what theorists of
+	programming languages call the theory of types.
+
+      <p>
+	To what I am saying: suppose I'm investigating a problem in
+	quantum computing, and in the course of the problem I
+	encounter some matrix, $M$, which I realize is central to the
+	problem.  As soon as I see such a matrix, all sorts of
+	connections are made &ndash; I will have in mind results like:
+	(a) the singular value decomposition; (b) the Schur
+	decomposition; (c) the fact that the matrix has at least one
+	eigenvector (if it's a complex matrix), and so on.  I may
+	suspect that the matrix is Hermitian.  Often that can be
+	proved with just a little extra work.  If I can do that, then
+	I immediately add a few extra facts: (d) the matrix is
 	diagonalizable by a unitary matrix; (e) the matrix has real
 	eigenvalues on the diagonal; (f) the singular values are the
 	absolute values of the eigenvalues, and so on.  Having
@@ -1296,43 +1427,47 @@
 	up reasoning about objects where you have long lists of
 	properties: this is a positive, Hermitian matrix, with
 	such-and-such a gap between the first and second largest
-	eigenvalues, the trace is such-and-such, and so on.  You must
-	be able to hold all those properties in your head, understand
-	the implications of the properties, and how they relate to one
-	another.
+	eigenvalues, the trace is such-and-such, <em>etcetera</em>.
+	You must be able to hold all those properties in your head,
+	understand the implications of the properties, and how they
+	relate to one another.
 
       <p>
 	What I am trying to convey here is that when reasoning about
-	mathematical objects I am constantly learning new things about
-	them, and that changes my internal representation of the
-	object.  In many ways, that seems to be much of what
-	mathematics is: little incremental increases in knowledge,
-	noticing this and that property, gradually building up your
-	understanding.  Needless to say, this process of constantly
-	updating one's understanding is not like the type system in
-	most programming languages.  Yet it nonetheless seems somewhat
-	close in spirit.  What you want is a type system which is
-	flexible enough to express all these many, many properties.
-	When thinking about problems the kind of thing I find myself
-	thinking is "Well, this matrix has a pretty large spectral
-	gap, but not too large, it's about a factor such-and-such
-	smaller than this matrix over here".  What sort of type system
-	would support such a statement?*<span class="marginnote">*
-	Ideally, the type system would allow some ambiguity, which is
-	often extremely helpful when getting a feeling for a
-	mathematical problem.  But even an expressive system without
-	much tolerance for ambiguity would be useful.</span>
+	mathematical objects we constantly learn new things about
+	those objects, and that changes our internal representation of
+	the object.  That is much of what doing mathematics is: little
+	incremental increases in knowledge, noticing this and that
+	property, gradually building up our understanding.  This
+	process of constantly updating one's understanding is not like
+	the type system used in most programming languages, yet it
+	seems close in general spirit.  What we want is a type system
+	which is flexible enough to express all these many, many
+	properties.  When thinking about problems the kind of thing I
+	find myself thinking is "Well, this matrix has a pretty large
+	spectral gap, but not too large, it's about a factor
+	such-and-such smaller than for this matrix over here, and it
+	seems like it might be related to the gap in such-and-such a
+	model".  What sort of type system would support such a
+	statement?*<span class="marginnote">* Ideally, the type system
+	would allow some ambiguity, which is often extremely helpful
+	when getting a feeling for a mathematical problem.  But even
+	an expressive system without much tolerance for ambiguity
+	would be useful.</span>
 
       <p>
 	When I look at existing systems for doing mathematics, I don't
-	see this.  When I'm using Python / numpy to do linear algebra
-	I have very limited ways of expressing even such basic facts
-	as that a matrix is Hermitian, or unitary, much less the
-	actual way in which I think about the objects, in terms of
-	towers of interrelating properties.  And because the system is
-	so unaware of the actual nature of the mathematical objects
-	it's manipulating, it has no means of helping express what I
-	know (or ought to know) about those objects.
+	see this.  For instance, when I'm using Python / Numpy to do
+	linear algebra I have very limited ways of expressing even
+	such basic facts as that a matrix is Hermitian, or unitary,
+	much less the actual way in which I think about the objects,
+	in terms of great collections of interrelating properties.
+	And because the system is so unaware of the actual nature of
+	the mathematical objects it's manipulating, it has no means of
+	helping express what I know (or ought to know) about those
+	objects.  It's not visible even at the level of long textual
+	lists of possibilities, much less in well designed and
+	suggestive visual representations.
 
       <p>
 	I've used the term <em>type system</em> here with some
@@ -1340,27 +1475,35 @@
 	connotations: people think of type systems as dry things, not
 	as things connected to beautiful, expressive user interfaces.
 	But I'm thinking of the type as being intimately connected to
-	the user interface.  In this view, a srubbable number
+	the user interface.  In this view, a scrubbable number
 	is <em>not</em> the same type as an ordinary number.  In other
 	words, when I say "type" I'm really referring both to a rich
 	concept of what a mathematical object is, and rich ways of
 	allowing the user to interact with it, and to relate it to
-	other objects.
+	other objects*<span class="marginnote">* I suspect programming
+	languages such as Haskell achieve some (but not all) of what
+	I've described here; they have far more expressive type
+	systems than more traditional programming languages, but also
+	fall far short of the rich ways we think about mathematical
+	objects.  I do not (yet) know enough about this vein of work
+	to be sure, though.  Notions such as duck typing and extreme
+	late binding are also relevant; one learns about mathematical
+	objects in real time, and the representations and interface
+	change in response.</span>.
 
       <p>
-	Let me finish this section with
-	a <a href="http://mathoverflow.net/questions/38639/thinking-and-explaining">little
-	story</a> from Thurston about thinking about mathematics:
+	Let me finish this section by zooming out a little to the long
+	view.  Consider the
+	following <a href="http://mathoverflow.net/questions/38639/thinking-and-explaining">story</a>
+	from Thurston, about how we think about mathematics:
 	
 	<blockquote>
 	  <em>
 	    How big a gap is there between how you think about
 	    mathematics and what you say to others?  Do you say what
-	    you're thinking?  Please give either personal examples of
-	    how your thoughts and words differ, or describe how they
-	    are connected for you... mathematicians often have
-	    unspoken thought processes guiding their work which may be
-	    difficult to explain, or they feel too ihibited to
+	    you're thinking?... mathematicians often have unspoken
+	    thought processes guiding their work which may be
+	    difficult to explain, or they feel too inhibited to
 	    try... Once I mentioned this phenomenon to Andy Gleason;
 	    he immediately responded that when he taught algebra
 	    courses, if he was discussing cyclic subgroups of a group,
@@ -1377,15 +1520,16 @@
 	</blockquote>
 
 	<p>
-	  Why can't we see that picture?  Preferably with a powerful
-	  interface, as part of an environment in which to think and
-	  create.
+	  Why can't we create tools to convey that picture, and
+	  powerful means of working with it, as part of an environment
+	  in which to think and create?
 
       <h2>Making the abstract concrete</h2>
 
       <blockquote>
 	<em>To a certain extent, a person's mathematical skill is tied
-	  to their ability to... make the abstract more concrete.</em>
+	  to their ability to [...] make the abstract more
+	  concrete.</em>
       </blockquote> 
 
       <p>
@@ -1413,13 +1557,18 @@
       </blockquote>
 
       <p>
-	I want to riff on these statements for a bit.
-      </p>
+	I want to riff on these statements for a bit.  The thoughts
+	that follow are a bit more disconnected than previous
+	sections, and so I've broken them up into three separate
+	pieces, without attempting to impose an overarching narrative:
+	(1) a discussion of examples of making the abstract concrete;
+	(2) a discussion of so-called "genius"; and (3) a discussion
+	of the utility of mastering new mathematical representations.
 
       <p>
-	Let me start with some examples where abstract concepts are
-	explicitly made more concrete.  A nice collection of examples
-	comes from the answers to
+	<strong>Examples:</strong> Let me give some examples where
+	abstract concepts are explicitly made more concrete.  A nice
+	collection of examples comes from the answers to
 	a <a href="http://mathoverflow.net/questions/25983/intuitive-crutches-for-higher-dimensional-thinking">question</a>
 	on MathOverflow*<span class="marginnote">* A non-trivial
 	fraction of the discussion on MathOverflow is about making
@@ -1545,31 +1694,36 @@
 	to represent the problem in terms of something you already
 	have some understanding of.  The deeper your understanding of
 	the old representation, and the more powerful a connection you
-	forge, the deeper your understanding of the new problem.  Note
-	that the connection need not always be precise.  As an
-	undergraduate I worried a lot about how to think about
-	high-dimensional objects.  I was amused (and somewhat
-	relieved) as a grad student to find that discussions of
-	high-dimensional objects were often accompanied merely by a
+	forge to the new problem, the deeper your understanding of the
+	new problem.  Note that the connection need not always be
+	precise.  As an undergraduate I worried a lot about how to
+	think about high-dimensional objects.  I was amused (and
+	somewhat relieved) as a grad student to find that discussions
+	of high-dimensional objects were often accompanied merely by a
 	picture of a blob on a blackboard, yet the picture actually
-	really did seem to help inform my intuition!  (There are, of
-	course, various embellishments of this idea one can use
-	&ndash; there's a nice
+	really did seem to help inform my
+	intuition*<span class="marginnote">* Jen Dodd points out that
+	this phenomenon may actually be quite deep: people need to go
+	through a non-trivial process to learn how to do this kind of
+	thing; and it's surprisingly helpful.  The phenomenon may
+	repay further investigation.</span>!  (There are, of course,
+	various elaborations of this idea one can use &ndash; there's
+	a nice
 	example <a href="http://mathoverflow.net/a/26010">here</a>.)
 
       <p>
 	Neither of the answers above is quite about making the
-	abstract concrete.  Rather, it's to <em>understand the
-	unfamiliar in terms of things we already understand well.</em>
-	Of course, when someone knows little about mathematics, that
-	means finding explanation in terms of what we usually think of
-	as the concrete.  But when they learn more mathematics, they
-	start to think of things like characteristic functions and the
-	Boolean hypercube as concrete.  It makes perfect sense to
-	Scott Aaronson to talk about $R^n$ having exponentially many
-	almost-orthogonal vectors.  He's thought about this a lot; for
-	him it's an important fact, a fact which is connected to many
-	other things.
+	abstract concrete.  Rather, they're about <em>understanding
+	the unfamiliar in terms of things we already understand
+	well.</em>  Of course, when someone knows little about
+	mathematics, that means explanations must be in terms of what
+	we usually think of as the concrete.  But when they learn more
+	mathematics, they start to think of things like characteristic
+	functions and the Boolean hypercube as concrete.  It makes
+	perfect sense to Scott Aaronson to talk about $R^n$ having
+	exponentially many almost-orthogonal vectors.  He's thought
+	about this a lot; for him it's an important fact, a fact which
+	is connected to many other things.
 
       <p>
 	We've dwindled to the vacuously true.  Everyone would no doubt
@@ -1579,14 +1733,20 @@
 	Systems for doing mathematics typically assume that
 	you've <em>already</em> gone through this process, and make
 	little (or no) explicit effort to help with it; (2) Of course,
-	such systems can be used to help go through this process
+	such systems can be used as an aid to go through this process
 	(e.g., I used <em>Maple</em> to learn about hypergeometric
 	functions, by playing with plots).  Doing this well requires
 	some non-obvious meta-cognitive strategies; (3) These
 	strategies could be reified within the system, either through
 	user interface elements, or perhaps through less subtle
-	methods, such as interactive essays which setup a playground
-	for us to understand the new in terms of the old.
+	methods, such as interactive essays which set up a playground
+	for us to understand the new in terms of the old; and (4) It'd
+	be interesting to relate this to the famous results in
+	cognitive science on how the strength of our memory depends on
+	the level of elaboration we bring to the act of memorization.
+	E.g., the work
+	by <a href="http://scholar.google.ca/scholar?q=related:ZbJ9oflw08sJ:scholar.google.com/&hl=en&as_sdt=0,5">Craik
+	and Tulving</a>, and the followup work that's been done.
 
 
       <p>
@@ -1607,28 +1767,27 @@
       <p>
 	I believe this is wrong.  I don't believe such a "genius" has
 	access to some special ability that other people don't have.
-	There is no such genius; instead, there are people who
+	There is no such genius.  What there is are people who
 	systematically search out more ways of representing
 	mathematical objects in terms of things they already
 	understand well.  They then slowly and laboriously practice
 	using those many representations, until they come to seem
 	simple and natural.  This is more prosaic than the
 	genius-with-special-powers story, but I believe it's more
-	likely to be correct.  It should be possible to support this
-	process in our systems.
+	likely to be correct.  More importantly, from the point of
+	view of the current notes, it should be possible to support
+	this process in the systems we build.
 
       <p>
 	<strong>Mastering new representations can make it trivial to
 	solve problems that otherwise seemed difficult or
 	impossible.</strong>  This is a reiteration of the last point,
-	from a slightly different example.  I wanted to write down a
-	very concrete example of how mastery of new representations
-	can trivialize formerly difficult problems.  The example does
-	not, alas, involve any nice new representations &ndash; it's a
-	great problem to develop an environment (maybe an extension of
-	the difference equation solver) which does.  But I though it
-	might nonetheless be useful to keep in mind as an example of
-	this process.
+	from a slightly different angle.  I wanted to write down a
+	concrete example of how mastery of new representations can
+	trivialize formerly difficult problems.  The example does not,
+	alas, involve any nice new representations (a good followup
+	problem).  But I thought it might nonetheless be useful to
+	keep in mind as an example of this process.
 
       <p>
 	Suppose I ask you to prove that the square root of two is
@@ -1646,10 +1805,10 @@
 	the <a href="http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic">fundamental
 	theorem of arithmetic</a>, that is, the idea that every
 	integer can be uniquely represented as a product of prime
-	numbers.  It's not just the case that understand the statement
-	and proof of the theorem, you've actively applied it in many
-	different circumstances.  If that's the case then it becomes
-	second nature to try to apply it to problems involving
+	numbers.  It's not just the case that you understand the
+	statement and proof of the theorem, you've actively applied it
+	in many different circumstances.  If that's the case then it
+	becomes second nature to try to apply it to problems involving
 	integers, multiplication, and divisibility.  You also tend to
 	notice when it's possible to turn everything in the problem
 	into an integer, which we can do by squaring the equation
@@ -1660,7 +1819,7 @@
 	\end{eqnarray}
 
 	To someone used to thinking in terms of products of prime
-	number it's obvious that the left-hand side has an odd number
+	numbers it's obvious that the left-hand side has an odd number
 	of prime factors, and the right-hand side has an even number
 	of prime factors.  This is impossible by the uniqueness of the
 	prime factorization.  And so our original assumption, that
@@ -1671,17 +1830,17 @@
 	If you only know a little number theory, but just happen to
 	have mastered the fundamental theorem of arithmetic, then
 	proving the square root of $2$ is irrational is very nearly
-	the kind of thing you can see in a flash of insight.  I began
-	verbally explaining the above proof to my wife (a PhD in
-	theoretical physics), only to have her cut me off after less
-	than thirty seconds with a delighted exlamation of "Oh, I
-	see!"  But someone who happens not to have mastered the
-	fundamental theorem (but otherwise has a comparable
-	background) is likely to have a much tougher time seeing why
-	the result is true.  Certainly, the proofs I saw as a student
-	were rather more cumbersome, in part because they didn't
-	assume that we'd really mastered the fundamental theorem of
-	arithmetic.
+	the kind of thing you can see in a flash of insight.  
+        <!-- I once verbally explained the above proof to someone who
+	had been mathematically trained (but had not seen this proof
+	before), only to have them cut me off after less than thirty
+	seconds with a delighted exlamation of "Oh, I see!"  --> But
+	someone who happens not to have mastered the fundamental
+	theorem (but otherwise has a comparable background) is likely
+	to have a much tougher time seeing why the result is true.
+	Certainly, the proofs I saw as a student were rather
+	cumbersome, in part because they didn't assume that I'd really
+	mastered the fundamental theorem of arithmetic.
 
       <p>
 	Of course, it is perfectly possible for someone to have
@@ -1691,10 +1850,10 @@
 	It also means: (a) knowing when it's likely to apply (problems
 	concerning multiplication and division and lots of integer
 	terms are often good candidates, problems involving lots of
-	additions are often harder to apply it to); (b) knowing when
-	to apply heuristics like recasting your problem in a form
-	where as many things are integers as possible; and (c) having
-	considerable facility with basic algebra.
+	additions are often harder targets); (b) knowing when to apply
+	heuristics like recasting your problem in a form where as many
+	things are integers as possible; and (c) having considerable
+	facility with basic algebra.
 
       <p>
 	<strong>Problem:</strong> Develop a prototype environment
@@ -1703,90 +1862,138 @@
       <h2>Questions / to do</h2>
 
       <p>
-	I'll stop there with the notes.  Obviously, there's much more
-	to be done.  Let me conclude with a few final notes on things
-	to explore.
+	I'll stop there with the notes.  Obviously, this barely
+	scratches the surface of what needs to be done, but at least I
+	understand it better now.  Let me conclude with a few final
+	notes on things to explore.
 
       <p>
-	What's the connection to other specific questions I am
-	interested in: What comes after the web?  What is the simplest
-	system design that would support (most of) the experience of
-	the web?  Why is paper-and-pencil still so much better than a
-	computer for so many types of exploration?  What will change
-	that?  (Broadly: the really good pattern recognition that is
-	now coming online, together with new hardware and UI design;
-	this should open up entirely new worlds.).
+	Connections to other questions I am interested in:
+
+	<ul>
+	  <li>What comes after the web? 
+ 
+	  <li>If we were to start over, what would be the simplest
+	    system design that would support the most important of the
+	    basic capabilities of the web?  (This looks superficially
+	    like the first question, but is in fact complementary.)
+
+	  <li>Why is paper-and-pencil still so much better than a
+	    computer for so many types of exploration?  What will
+	    change that?  (Broadly: the really good pattern
+	    recognition that is now coming online, together with new
+	    hardware and UI design; this should open up entirely new
+	    worlds.).
+
+	  <li>How to keep a notebook?  This is a problem to which
+	  surprisingly little attention has been paid.  Yet there's
+	  much to say about it, and it informs questions like "What's
+	  an ideal medium for doing creative scientific work?"
+
+	  <li>Finally, let me mention a few even broader problem
+	areas: designing group behaviour; designing institutions; the
+	allocation of expert attention; amplifying collective
+	intelligence; open science; scaling human systems; and
+	artificial intelligence.
+	</ul>
 
       <p>
-	What's the connection to other big picture problems that I'm
-	interested in?  E.g.: designing group behaviour; designing
-	institutions; the allocation of expert attention; amplifying
-	collective intelligence; open science; scaling human systems;
-	and artificial intelligence.
+	A broad question to return to: Why have the visions of
+	Engelbart, Licklider, Kay <em>et al</em> mainly had an
+	indirect (albeit enormous) impact on <em>what people actually
+	work on</em>?  The related communities and institutions and
+	resources we have (in industry, academia, and elsewhere) are
+	mostly organized around much smaller visions.  That's really
+	interesting.  I have a vague sense of why this has happened,
+	but I should distill a well thought out answer, not the
+	bromides I've heard in the past.
+
+      <p>
+	Another broad question to return to: I've spoken informally of
+	new representations, new operations, new fundamental objects,
+	all without defining what those terms mean.  Indeed, my useage
+	of the terms has been somewhat inconsistent through the notes.
+	Of course, it's counter-productive to fixate too early on
+	questions of definition &ndash; all these concepts are, in
+	some sense, emergent concepts that we are constructing out of
+	the Turing soup, and it will take time to become clear what
+	the right concepts are.  But it may help achieve clarity to
+	play a little with what these concepts mean, and how they
+	relate.
+
+      <p>
+	A point of (possible) pessimism to analyse in more depth: a
+	skeptic might say: "Well, it's all very well to do this kind
+	of thing with simple things like difference equations and so
+	on, but it'll never work for sophisticated exploration of
+	[insert favourite highly abstract mathematical object here]".
+	My own explorations suggest there's at least a grain of truth
+	&ndash; the grain being that it will be quite a bit more
+	difficult.  However, one also naturally suspects that the real
+	explanation is simply that we need to build up to it.  We
+	don't begin a student's education by defining Riemannian
+	manifolds, geodesics, the Levi-Civita connection, etcetera.
+	Instead, we begin with simpler concepts &mdash; $R^n$, vector
+	fields, simple differential operators like $d / dx$, and so
+	on, and gradually build up.  I expect the same will be true of
+	a "new interface" for mathematics.  Still, it may be useful to
+	dig into this in more depth.
 
       <p>
 	To push further in the directions described here, I'd need to
-	learn to program well, and to design user interfaces well.
-	Both these abilities seem to me to be super-powers, enlarging
-	in a way similar to learning to write; it's well worth taking
-	time to acquire at least a basic facility with them.  The
-	combination to practice over and over is something like:
-	"Sketch out a design problem; sketch out an initial (really
-	bad) idea for a solution; implement; criticise the problem and
-	solution; iterate".  I found even the very simple problems in
-	these notes &ndash; the non-linear scrubbable numbers and the
-	sine visualization &ndash; quite challenging (and informative)
-	to build out.  With much more experience
-
-      <p>
-	Classic connections: the Genera environment.
-
-      Lots and lots of design, challenging myself frequently to step
-      up to a new level.  I found even the rather simple examples here
-      quite onerous to do.  That is, of course, due to a lack of basic
-      fluency and experience on my part.  
-
-      Lots and lots of programming, challenging myself frequently to
-      step up to a new level.
-
-
-      <p>
-	<strong>Collect problems.</strong>  In particular, it's worth
-	collecting even problems that seem trivial.  I learnt quite a
-	bit attacking the granularity problem above.  Victor's essay
+	learn both to program well, and to design user interfaces
+	well.  Both these abilities seem to me to be super-powers,
+	enlarging in a way similar to learning to write; it's well
+	worth taking time to acquire at least a basic facility, and
+	perhaps more.  I found it challenging to build out even the
+	very simple systems in these notes &ndash; the non-linear
+	scrubbable numbers and the sine visualization.  I learnt a
+	lot.  The combination to practice over and over is something
+	like: identify a rough version of a design problem (like the
+	problem of developing granular scrubbable numbers); sketch out
+	an initial (really bad) idea for a solution; implement;
+	criticise the problem and solution; iterate.  Lots of practice
+	will be needed, challenging myself frequently to step up to
+	new levels!  It's worth starting even with very simple
+	problems.  I did not anticipate how much I would learn from
+	the granular scrubbable numbers problem, nor, indeed, how much
+	I clearly still could learn from further iterations.  Victor's
+	essay
 	<a href="http://worrydream.com/LadderOfAbstraction/">Up and
 	Down the Ladder of Abstraction</a> shows the great depth even
-	in a problem such as: how to drive a (simulated) car down a
-	(simulated) road?
-      </p>
+	in a problem such as: how to drive a (very simple simulated)
+	car down a (very simple simulated) road?
 
+	<p> In these notes I've mentioned many elementary problems to
+	  return to in this vein, including: (1) Improving the
+	  granular slider (explore the momentum and damping idea, the
+	  memory idea, and the minimal change problem); and (2)
+	  Prototyping environments which would help a researcher
+	  discover
+	  the <a href="http://arxiv.org/abs/quant-ph/9909020">result</a>
+	  about the representation of quantum states which I mentioned
+	  earlier.
+
+	<p>
+	  More ambitious goals would be to develop interactive essays
+	  explaining the basic ideas of a subject such as quantum
+	  computing or neural networks.  I've begun sketching out
+	  prototype interactive essays explaining the quantum gate
+	  model, quantum teleporation, and backpropagation.  I've
+	  learnt a great deal from the sketches, and am encouraged,
+	  although it's also gradually becoming clear just how
+	  difficult it will be to do this well.  Fortunately, it's
+	  also extremely motivating and exciting, and for that reason
+	  may be a better target than the more elementary problems.
+
+	<H3>Acknowledgements</h3>
+	
       <p>
-	<strong>Problems:</strong>
-      </p>
-
-TO get good at programming: write many programs, do lots of iteration to improve the programs.  The programs should preferably be important to me, based on ideas which matter to me, and they should push me to develop in new ways.
-
-Two traps: (1) learning to program by working slowly and methodically
-through books; one needs genuine project work to which one is
-committed; (2) learning to program through projects only; you end
-
-I'm talking about programming as a monolithic skill.  But it's not a
-monolithic skill. Particular things to get good at:
-
-It's a mistake to focus too much on programming.  The term "great
-programmer" is sometimes used to mean someone very good at
-implementing someone else's specification.  This seems to me like
-those writers who can quickly write great prose, but who don't know
-what to write about (Martin Amis comes to mind).  Yes, the ability to
-code is important.  But knowing what to code is even more important.
-This means developing great taste in problems.
-
-
-Without great
-designs, all the programming skill in
-
-Design is difficult:
-
+	Thanks to <a href="http://jendodd.com/">Jen Dodd</a>
+	and <a href="https://www.igvita.com/">Ilya Grigorik</a> for
+	many conversations on topics related to these notes.  And
+	thanks to <a href="http://jendodd.com/">Jen Dodd</a> for
+	detailed feedback that greatly improved the notes.
 
     </div>
   </body>

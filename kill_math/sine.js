@@ -99,9 +99,12 @@ function drawAnimatedElements() {
     for (var j = 1; j <= n; j++) {
 	phi = j * theta/n;
 	newPos = RHS(phi);
-	ctx.line(pos.x, pos.y, newPos.x, newPos.y, "red", "1px");
+	ctx.line(pos.x, pos.y, newPos.x, newPos.y, "#ccc", "1px");
 	pos = newPos;
     }
+
+    // plot the line at the end of the sine curve
+    ctx.line(pos.x, pos.y, pos.x, 100, "red", "1px");
     
     // plot the endpoint on the sine curve
     ctx.beginPath();

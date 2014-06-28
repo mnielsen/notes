@@ -26,7 +26,9 @@ function updateAnswer2() {
 }
 
 function initScrubbableNumbers2() {
-    var htmlElement = document.registerElement('scrubbable-number2');
+    if (typeof document.registerElement !== "undefined") {
+	var htmlElement = document.registerElement('scrubbable-number2');
+    }
     $("scrubbable-number2").each(function() {
 	var childId = this.id+"Child2";
 	var n = this.textContent;
