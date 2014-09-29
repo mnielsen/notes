@@ -1,4 +1,4 @@
-var DELAY = 60; // Number of seconds between screen shots
+var DELAY = 30; // Number of seconds between screen shots
 
 $($.getJSON("index.json", function(index) {
     // Get viewport width and height
