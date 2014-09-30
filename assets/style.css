@@ -78,3 +78,7 @@ p {
     color: #666;
     font-size: 9pt;
 }
+
+blockquote {
+    line-height: 1.7;
+}
