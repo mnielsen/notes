@@ -34,6 +34,10 @@ h1 {
     color: #eee;
 }
 
+h2, h3 {
+    line-height: 1.7;
+}
+
 a { 
     color: #2A6EA6;
     text-decoration: none;
