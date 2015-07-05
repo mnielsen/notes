@@ -23,11 +23,11 @@
 	    <p>
 	      <strong>Note:</strong> <em>I'm about the millionth
 		person to write an answer to this question. I'm
-		writing it primarily to distill and improve my own
-		understanding, not because there's anything novel
-		about my answer.  If it's useful to you, great! And if
-		you believe I'm mistaken about anything, do let me
-		know, mn@michaelnielsen.org.</em>
+		writing it distill and improve my own understanding,
+		not because there's anything novel about my answer.
+		If it's useful to you, great! And if you believe I'm
+		mistaken about anything, do let me know,
+		mn@michaelnielsen.org.</em>
 	    </p>
 	    
 	    <p>
@@ -87,7 +87,8 @@
 	      the corresponding AST, and then to manipulate the
 	      AST. But even when a language makes this possible, it's
 	      usually something of an afterthought, rather difficult
-	      to use, and as a consequence only rarely used.
+	      to use, and as a consequence only rarely used.  It's
+	      certainly not a core competency of the language.
 	    </p>
 
 	    <p>
@@ -151,10 +152,9 @@
 
 	    <p>
 	      First, they make it easy for Lisp programs to manipulate
-	      code: it makes code into data, and because we have
-	      direct access to the AST it becomes very easy to
-	      transform and manipulate code in powerful ways.  This is
-	      the basis for Lisp macros.
+	      code: not only is code data, in fact the AST is data,
+	      and it's very easy to transform and manipulate the AST
+	      in powerful ways.  This is the basis for Lisp macros.
 	    </p>
 
 	    <p>
@@ -176,6 +176,10 @@
 	      "step back up a level of the tree".
 	    </p>
 
+	    <p>
+	      Basically, parentheses give you macros and DSLs.
+	    </p>
+	    
 	    <p>
 	      There are other ways we could represent a tree structure
 	      in code.  One often-suggested way is to use indentation.
@@ -225,11 +229,9 @@
 	    <p>
 	      Unfortunately, I don't really know the answer to that
 	      question.  I haven't had enough experience writing
-	      macros or DSLs.
-	    </p>
-
-	    <p>
-
+	      macros or DSLs.  To figure it out I'd need either a lot
+	      more experience, or some really good example code.  Even
+	      better would be both!
 	    </p>
 	    
 	    <p>
