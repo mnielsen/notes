@@ -23,10 +23,11 @@
 	    <p>
 	      <strong>Note:</strong> <em>I'm about the millionth
 		person to write an answer to this question. I'm
-		writing it distill and improve my own understanding,
-		not because there's anything novel about my answer.
-		If it's useful to you, great! And if you believe I'm
-		mistaken about anything, do let me know,
+		writing it to distill and improve my own
+		understanding, not because there's anything especially
+		novel about my answer.  If it's useful to you, great!
+		And if you believe I'm mistaken about anything, please
+		drop me a polite note to let me know,
 		mn@michaelnielsen.org.</em>
 	    </p>
 	    
@@ -120,9 +121,9 @@
 	      corresponds to an AST that looks something
 	      like*<span class="marginnote">* I'm ignorant of the
 	      details of the implementation of standard Lisp
-	      interpreters, so I'm not sure the internal AST is this
-	      &ndash; it's easy to imagine alternate choices.  But
-	      this conveys the broad idea.</span>:
+	      interpreters and compilers, so I'm not sure the internal
+	      AST is this &ndash; it's easy to imagine alternate
+	      choices.  But this conveys the broad idea.</span>:
 	    </p>
 
 	    <p>
@@ -213,8 +214,8 @@
 	      <strong>Problem for later:</strong> <em>There are other
 	      languages such as Haskell, Prolog and Ruby which are
 	      also extremely extensible (I am told).  They do not, so
-	      far as I know, make use of parentheses.  How do they fit
-	      into this story?</em>
+	      far as I know, make use of parentheses in the same way.
+	      How do they fit into this story?</em>
 	    </p>
 
 	    <p>
@@ -233,7 +234,22 @@
 	      more experience, or some really good example code.  Even
 	      better would be both!
 	    </p>
-	    
+
+	    <p>
+	      With that said, it seems plausible that the ability to
+	      inspect and manipulate the AST (or some data structure
+	      serving an equivalent purpose) is extremely useful, and
+	      should be built in to any powerful programming language.
+	    </p>
+
+	    <p>
+	      <strong>Problem for later:</strong> <em>Are there
+	      alternatives to the abstract tree structure used in the
+	      AST?  Some natural way of flattening it, for instance?
+	      Or perhaps some other approach entirely?
+	      </em>
+	    </p>
+		
 	    <p>
 	      <strong>Acknowledgements:</strong> These notes were
 	      strongly influenced by several of the answers
