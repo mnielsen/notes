@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Why are there so many parentheses in Lisp?</title>
+    <link rel="stylesheet" type="text/css"
+	  href="http://mnielsen.github.io/notes/assets/style.css">
+    
+    <style>
+      #header {background: DarkRed;}
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Why are there so many parentheses in Lisp?</h1>
+    </div>
+
+    <div id="container">
+
+      <div id="main">
+	<p>
+	  <span class="marginnote"><a href="../index.html">Return to index</a></span>
+
+	  <div id="main">
+	    <p>
+	      <strong>Note:</strong> <em>I'm about the millionth
+		person to write an answer to this question. I'm
+		writing it primarily to improve my understanding, not
+		because there's anything novel about my answer.  If it
+		helps you, more power to you!  And if you believe I'm
+		in error, let me know, mn@michaelnielsen.org.</em>
+	    </p>
+	    
+	    <p>
+	      When you're first exposed to Lisp, the use of
+	      parentheses may seem strange and annoying.  Why are the
+	      parentheses there?  Are they a case of bad design, a
+	      feature that could easily be removed or reduced? Or is
+	      there some good reason Lisp is full of parentheses, and
+	      other programming languages aren't?
+	    </p>
+
+	    <p>
+	      In this note I explain how the parentheses arise as a
+	      consequence of certain natural design decisions.
+	      They're not the unique way of satisfying those
+	      decisions, but they are a simple and natural approach.
+	    </p>
+
+	    <p>
+	      <h2>Background on abstract syntax trees (ASTs)</h2>
+	    </p>
+
+	    <p>
+	      In many (not all) programming languages, code is
+	      represented internally by the interpreter or compiler
+	      using
+	      an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">abstract
+	      syntax tree (AST)</a>.  I won't define ASTs precisely.
+	      But the idea is to break complex blocks of code into
+	      atomic pieces, in a way that makes it easy to execute
+	      the code, or transform or analyze in some other way.
+	    </p>
+
+	    <p>
+	      Here's a stylized example of an AST, taken from
+	      <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Wikipedia</a>:
+	    </p>
+
+	    <p>
+	      <img src="ast.png" width="400px">
+	    </p>
+
+	    <p>
+	      In most languages, code starts life as a string. The
+	      interpreter or compiler then parses that string, and
+	      transforms it into an AST.  The AST is then used by the
+	      interpreter or compiler as the basis for execution.
+	    </p>
+
+	    <p>
+	      Some languages make the AST available as a data
+	      structure.  In Python, for example, the <code>ast</code>
+	      module allows you to convert strings to AST, and to
+	      manipulate the AST. But even when a language makes this
+	      possible, it's usually something of an afterthought,
+	      rather difficult to use, and as a consequence only
+	      rarely used.
+	    </p>
+
+	    <p>
+	      <h2>Lisp: a language which makes it trivial to work with ASTs</h2>
+	    </p>
+
+	    <p>
+	      Lisp takes a very different approach, based around the
+	      design decision that it should be extremely easy to
+	      analyze and manipulate the AST for any piece of code.
+	    </p>
+
+	    <p>
+	      Practically speaking, this big broad design decision is
+	      implemented through three more detailed design
+	      decisions.
+	    </p>
+
+	    <p>
+	      First, the correspondence between code and AST should be
+	      direct to the point of being almost trivial.  So, for
+	      instance, the Lisp code
+	    </p>
+
+	    <p>
+	      <code>(+ (+ 2 3) 7)</code>
+	    </p>
+
+	    <p>
+	      corresponds to an AST that looks something
+	      like*<span class="marginnote">* I'm ignorant of the
+	      details of implementation, so I'm not sure the internal
+	      AST is this &ndash; it's easy to imagine alternate
+	      choices.  But this conveys the broad idea.</span>:
+	    </p>
+
+	    <p>
+	      <img src="ast_lisp.png" width="300px">
+	    </p>
+
+	    <p>
+	      A second design decision is that Lisp's should have
+	      lists as a central data structure.  Lisp thus has many
+	      operations to manipulate and analyze lists.
+	    </p>
+
+	    
+	    <p>
+	      A third design decision, complementing and completing
+	      the first two, is that code should be represented as a
+	      list.
+	    </p>
+
+	    <p>
+	      The net result is to make it extremely easy to analyze
+	      and manipulate the AST for any piece of code.
+	    </p>
+
+	    <p>
+	      These decisions have several lovely consequences.
+	    </p>
+
+	    <p>
+	      First, they make it very easy for Lisp programs to
+	      manipulate code: code is, after all, just data, and
+	      because we have direct access to the AST it becomes very
+	      easy to transform and manipulate in powerful ways.  This
+	      is the basis for Lisp macros.
+	    </p>
+
+	    <p>
+	      Second, having direct access to the AST makes it very
+	      easy to extend the language, and to write domain
+	      specific languages.
+	    </p>
+
+	    <p>
+	      These consequences are lovely.  But they come at a price
+	      that doesn't need to be paid by programming languages
+	      that don't make representing the AST such a high
+	      priority (i.e., most languages).  They mean that there
+	      needs to be a simple way of representing a tree
+	      structure within Lisp code.  The purpose of the
+	      parentheses is to enable that representation.  In
+	      particular, an open parenthesis, "(", means "step down a
+	      level of the tree".  And a close parenthesis, ")", means
+	      "step back up a level of the tree".
+	    </p>
+
+	    <p>
+	      There are other ways we could represent a tree structure
+	      in code.  One often suggested way is to use indentation.
+	      So, for example, <code>(+ (+ 2 3) 7)</code> could
+	      become:
+	    </p>
+
+<pre>
++
+  + 2 3
+7
+</pre>
+
+	    <p>
+	      In this representation, the use of one extra level of
+	      indentation means simply &ldquo;go down a level in the
+	      tree&rdquo;.
+	    </p>
+
+	    <p>
+	      There are other possible approaches to representing a
+	      tree structure.  Regardless of the details of the
+	      approach taken, once you've committed to representing
+	      the AST, you need some way of representing a tree
+	      structure in code.  Parentheses are a reasonably simple
+	      and natural way of doing this.  And that's why Lisp has
+	      so many parentheses.
+	    </p>
+
+	    <p>
+	      <strong>Problem for later:</strong> <em>There are other
+	      languages such as Haskell, Prolog and Ruby which are
+	      also extremely extensible (I am told).  They do not, so
+	      far as I know, make use of parentheses.  How do they fit
+	      into this story?</em>
+	    </p>
+
+	    <p>
+	      How desirable is it to be able to represent and
+	      manipulate the AST in such a simple and direct way?
+	    </p>
+
+	    <p>
+	      Unfortunately, I don't really know the answer to that
+	      question.  I simply haven't had enough experience
+	      writing macros or DSLs.
+	    </p>
+	    
+	    <p>
+	      <strong>Acknowledgements:</strong> These notes were
+	      strongly influenced by several of the answers
+	      to <a href="http://stackoverflow.com/questions/2720843/can-a-language-have-lisps-powerful-macros-without-the-parentheses">this
+	      StackOverflow question</a> about whether a language can
+	      have Lisp's macros without parentheses.
+	    </p>
+	    
+	  </div>
+      </div>
+  </body>
+</html>
+
+
+
+
