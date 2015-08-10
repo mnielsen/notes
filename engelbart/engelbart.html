@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Engelbart: "Augmenting Human Intellect"</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h2>Engelbart: "Augmenting Human Intellect"</h2>
+
+      <p>
+	<img src="assets/engelbart.jpg" height="300px" style="float: right; ">
+	<img src="assets/report.png" height="300px" style="float: right; padding-left: 20px;">
+
+
+	&ldquo;By "augmenting human intellect" we mean increasing the
+	capability of a man to approach a complex problem situation,
+	to gain comprehension to suit his particular needs, and to
+	derive solutions to problems&hellip; whether the problem
+	situation exists for twenty minutes or twenty years. We do not
+	speak of isolated clever tricks that help in particular
+	situations. We refer to a way of life in an integrated domain
+	where hunches, cut-and-try, intangibles, and the human "feel
+	for a situation" usefully co-exist with powerful concepts,
+	streamlined terminology and notation, sophisticated methods,
+	and high-powered electronic aids. &rdquo;
+      </p>
+
+      <p>
+      	<a href="http://www.dougengelbart.org/pubs/augment-3906.html">Source
+      	text</a> for Engelbart's paper on &ldquo;Augmenting Human
+      	Intellect&rdquo;.
+      </p>
+
+      <p style="opacity: 0.4;">
+	Slides by <a href="http://michaelnielsen.org">Michael
+	Nielsen</a>, for a small-group discussion with people from the
+	<a href="http://recurse.com">Recurse Center</a>, August 10,
+	2015.  The slides should be regarded as brief, rough and
+	very(!)  incomplete working notes.
+      </p>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Augmenting intellect with paper and pencil</h2>
+
+      <p>
+	What is 427 x 784?
+      </p>
+      
+      <p class="slide">
+	Hard for an unaided human.
+      </p>
+
+      <p class="slide">
+	Even harder: what is 721,269,127 x 422,599,421?
+      </p>
+
+      <p class="slide">
+	Both problems become easy with paper and pencil.
+      </p>
+
+      <p class="slide">
+	This is strange, <em>a priori</em>: wood pulp + wood +
+	graphite = more intellectual capability!
+      </p>
+
+      <p class="slide"> We're <em>used</em> to this, but that doesn't
+	 mean we understand it.  What's actually going on?  For what
+	 class of problems does paper and pencil help?  For what class
+	 of problems does it not help (or hinder)?  How much can it
+	 help?
+      </p>
+	 
+    </section>
+
+    
+    <section class="slide">
+      <h2>Advanced chess</h2>
+
+      <P>
+	<a href="http://www.nybooks.com/articles/archives/2010/feb/11/the-chess-master-and-the-computer/">Garry
+	Kasparov</a>, writing in the 2010 <em>New York Review of
+	Books</em>:
+      </P>
+      
+	<img src="assets/kasparov.png">
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Questions</h2>
+
+      <p>
+	Is there a theory of how humans and machines work together?
+	Or, at the least, some general principles governing behaviour?
+      </p>
+
+      <p>
+	Can we find principles that will let us build more powerful
+	human-machine systems?
+      </p>
+
+      <p class="slide">
+	Engelbart's paper sketches out a research program that aims
+	toward (roughly) these ends.
+      </p>
+
+      <p class="slide">
+	Because the paper is a sketch it is often highly speculative,
+	and sometimes rather vague.  It's better thought of as a
+	(cool-headed) manifesto than as a typical paper.  We won't
+	attempt to grok the whole thing &ndash; indeed, I certainly
+	don't grok the whole thing.  We will try to begin
+	understanding a few of the deep ideas.
+      </p>
+
+      <p class="slide">
+	In other words, I'm riffing on the paper, drawing connections
+	to other work, and asking questions.  Please jump in: suggest
+	connections, questions, ideas, and so on!
+      </p>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Problem solving as symbol structuring</h2>
+
+      <p>
+	Writing a book is the art of &ldquo;sitting down and putting a
+	hundred thousand words in a cunning order&rdquo; (Douglas
+	Adams)
+      </p>
+
+      <p class="slide">
+	Engelbart viewed augmentation as being to a great extent about
+	developing new ways of manipulating and structuring symbols:
+      </p>
+
+      <p class="slide">
+	&ldquo;One way of viewing the H-LAM/T system changes that we
+	contemplate--specifically, integrating the capabilities of a
+	digital computer into the intellectual activity of individual
+	humans--is that we are introducing new and extremely advanced
+	means for externally manipulating symbols. We then want to
+	determine the useful modifications in the language and in the
+	way of thinking that could result.&rdquo;
+      </p>
+
+      <p class="slide">
+	Examples of systems for structuring symbols: the
+	multiplication algorithm, diary, calendar, GTD, org-mode,
+	outlining tool, Word, Emacs, etc.
+      </p>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Scrivener</h2>
+
+      <img src="assets/scrivener.png" width="600" style="float: right;">
+
+      <p>
+	<em>Scrivener</em> is a popular outlining tool used by writers.
+      </p>
+
+      <p class="slide">
+	I suspect much of its popularity is due to <em>one</em> piece
+	of symbol structuring it does: a clear, built-in division
+	between research notes and draft material, making it easy to
+	jump back and forth.
+      </p>
+
+      <p class="slide">
+	The creators of <em>Scrivener</em> have taken a process that
+	formerly had to be done manually by writers, and built a
+	system of cues that make it easy and natural to do.
+      </p>
+
+      <p class="slide">
+	It's not difficult for a writer to do this manually.
+	But <em>Scrivener</em> makes it hard to avoid, providing all
+	the right cues at the right moments.
+      </p>
+
+      <p class="slide">
+	In other words it provides an environment for the <em>simple
+	process stuff</em> done by experts.
+      </p>
+	
+    </section>
+
+    <section class="slide">
+      <h2>Thinking about capabilities</h2>
+
+      <p>
+	Engelbart divides capabilities up:
+	<ol>
+	  <li>Basic capabilities;
+	  </li>
+
+	  <li>The repertoire hierarchy of capabilities, built up from
+	  the basic capabilities.</li>
+	</ol>
+      </p>
+
+      <p class="slide">
+	This division is a very clever move.
+      </p>
+
+      <p class="slide">
+	It's tempting to focus primarily on changes to basic
+	capabilities.  Many of those changes will <em>appear</em>
+	trivial.
+      </p>
+	
+      <p class="slide">
+	By concentrating on the repertoire hierarchy as an important
+	object of study, we are alerted to the fact that even a tiny
+	change to basic capabilities may <em>propagate</em> through
+	the repertoire hierarchy to cause major changes in effective
+	intellect.
+      </p>
+
+      <p class="slide">
+	<em>Scrivener's</em> division into research and draft is only
+	a small addition to the basic capabilities.  But it propagates
+	all through the writing process to cause a major change in
+	results.
+      </p>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>The impact of our means of manipulating symbols</h2>
+      
+      <p>
+	&ldquo;The Whorfian hypothesis states that the world view of a
+	culture is limited by the structure of the language which that
+	culture uses. But there seems to be another factor to consider
+	in the evolution of language and human reasoning ability. We
+	offer the following hypothesis, which is related to the
+	Whorfian hypothesis: Both the language used by a culture, and
+	the capability for effective intellectual activity are
+	directly affected during their evolution by the means by which
+	individuals control the external manipulation of symbols.&rdquo;
+      </p>
+      
+    </section>
+
+    <section class="slide">
+
+      <h2>Ken Perlin's widgets</h2>
+      
+      <p>
+	<iframe src="http://livestream.com/accounts/8293394/events/3167937/videos/55979749/player?autoPlay=false&height=360&mute=false&width=640" width="640" height="360" frameborder="0" scrolling="no"></iframe>
+      </p>
+
+      <p>Play from 47:10 through
+      53:05.  <a href="http://livestream.com/cdmschool/events/3167937/videos/55979749">
+      Original source</a>.</p>
+
+      <p>Symbols are no longer static.  They're dynamic, interactive.
+      They have both a user interface and the ability to interact with
+      one another.  If the symbols are well-designed, there is the
+      potential for emergent, collective behaviour, and new forms of
+      meaning (as with language).  Giving more powerful means of
+      expresion changes the basic capabilities, and, if well chosen,
+      this may affect the entire repertoire hierarchy.
+      </p>
+
+    </section>
+    
+    <section class="slide">
+      <h2>What's missing from Engelbart's paper?</h2>
+
+      <p>
+	He views problem solving as being all about information
+	handling: symbol structuring.
+      </p>
+
+      <p>
+	But there is a very large &ndash; maybe primary &ndash; factor
+	which is about emotional involvement.
+      </p>
+
+      <p>
+	Someone deeply committed with bad tools is often much more
+	effective than someone uninvolved with great tools.
+      </p>
+
+      <p>
+	How can we use computers to change people's emotional
+	experience?
+      </p>
+      
+      <p>
+	Papert's <a href="http://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746">Mindstorms</a>
+	is pretty good on this.
+      </p>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Problem solving as symbol structuring</h2>
+
+      <p>
+	<strong>Historian Charles
+	  Weiner, <a href="https://www.aip.org/history-programs/niels-bohr-library/oral-histories/5020-5">interviewing</a>
+	  physicist Richard Feynman, discussing Feynman's physics
+	  notebooks:</strong> These are loose-leaf notebooks with each
+	  page containing your work, everything that you asked
+	  yourself&hellip; And so this represents the record of the
+	  day-to-day work.
+      </p>
+
+      <p>
+	<strong>Feynman:</strong> I actually did the work on the
+	  paper.
+      </p>
+
+      <p>
+	[&hellip;]
+      </p>
+
+      <p>
+	<strong>Weiner:</strong> Well, the work was done in your head
+	  but the record of it is still here.
+      </p>
+
+      <p>
+	<strong>Feynman:</strong> No, it's not a record, not really,
+	  it's working. You have to work on paper and this is the
+	  paper. Ok?
+      </p>
+
+	
+    </section>
+
+      
+      
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
