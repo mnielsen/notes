@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Scratch notes on a few of Alan Kay's papers</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Scratch notes on a few of Alan Kay's papers"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-11-11T16:05-0500"/>
+<meta name="author" content="Michael Nielsen"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Scratch notes on a few of Alan Kay's papers</h1>
+
+<p>With an emphasis on things of current interest to me. Likely
+incomprehensible to others.
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Personal computing (1975)</a></li>
+<li><a href="#sec-2">2 Microelectronics and the personal computer (1977)</a></li>
+<li><a href="#sec-3">3 Computers, networks and education (1991)</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Personal computing (1975)</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+<a href="personal_computing_1975.pdf">Personal computing</a>
+</p>
+<p>
+"knowledge manipulator": interesting term.
+</p>
+<p>
+"dynamic medium": very interesting term.  Emphasizes that it is a
+medium.  I think Bret uses this term, too.
+</p>
+<p>
+"We felt strongly that the major design problems of the <i>Dynabook</i> lay
+in the area of communication [software?] rather than in new hardware
+architectures."  Not sure how this relates to Kay's emphasis on doing
+own hardware.
+</p>
+<p>
+"Interim Dynabook": I like it! What a great thing to be doing multiple
+iterations quickly, in a research environment, without the need to
+ship.  This is research!  I really like the fact that he named the
+system, and that he
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Microelectronics and the personal computer (1977)</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+<a href="micro.pdf">Microelectronics and the personal computer</a> (Scientific American, 1977)
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Computers, networks and education (1991)</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+<a href="computers_networks_education.pdf">Computers, networks and education</a> (Scientific American, 1991)
+</p>
+<p>
+"Gell-Mann has remarked that education in the 20th century is like
+being taken to the world's greatest restaraunt and being fed the menu.
+He meant that representations of ideas have replaced the ideas
+themselves; students are taught superficially about great discoveries
+instead of being helped to learn deeply for themselves.  In the near
+future, all the representations that human beings have invented will
+be instantly accessible anywhere in the world on intimate,
+notebook-size computers.  But will we be able to get from the menu to
+the food?  Or will we no longer understand the difference betwteen the
+two?  Worse, will we lose even the ability to read the menu and be
+satistifed just to recognize that it is one?"
+</p>
+<p>
+Some of the most effective people I know are super-skimmers and
+integrators who can glue lots of stuff together.  They'll have great
+project ideas, and be able to glue together extant materials to make
+those projects come to life easily.
+</p>
+<p>
+To try to sharpen that up: there's an integration ability that
+involves the cultivation of skimming and these relatively shallow
+representations that Kay is talking about.
+</p>
+<p>
+I'm reminded of Adler's "How to read a book".  He makes the point that
+it's possible to be good at reading a book in 10 minutes, 10 hours, 10
+days, 10 years.  This is the ability to read 100 books in 10 hours,
+and to integrate them to create something new.  It's a kind of
+remix-ability, or something like that.
+</p>
+<p>
+Perhaps it makes sense to cultivate this ability at search and
+integration <i>as well as</i> the kind of in-depth understanding that Kay
+is talking about.
+</p>
+<p>
+I don't think that integrative ability has ever been named.  Synoptic
+ability?  Integrative ability?  I think it's defined by a mixture of
+integrative ability, good search ability, taste, and some other
+qualities.  It'd be nice to name this, and to understand what exactly
+it involves.
+</p>
+<p>
+"In the Open School&hellip; the machines do not substitute for teachers.
+They are thought of as "just another material," like books, paints and
+clay, that can support the children's activities."
+</p>
+<p>
+I like this.  It's taking the computer as medium of expression
+seriously.
+</p>
+<p>
+There's an old question about whether discovery-based learning is the
+right way to go.  The debate tends to set things up in rather polar
+views: all discovery-based versus sage-on-a-stage (or similar) models.
+That's misleading.  What is undoubtedly true is that <i>more</i>
+discovery-based learning is a good idea.
+</p>
+<p>
+"we are quite capable of devising new mental bricks, new ways of
+thinking, that can enormously expand the understandings we can attain.
+The bricks we develop become new technologies for thinking."
+</p>
+<p>
+"the need for struggle should not be grounds for avoidance.
+Difficulty should be sought out, as a spur to delving more deeply into
+an interesting area.  An educational system that tries to make
+everything easy and pleasurable will prevent much important learning
+from happening."
+</p>
+<p>
+It's interesting that in many parts of life &ndash; sport and video games
+come to mind &ndash; making things easy also makes them <i>unpleasurable</i>.
+We love to struggle, under some circumstances.
+</p>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2015-11-11T16:05-0500</p>
+<p class="author">Author: Michael Nielsen</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

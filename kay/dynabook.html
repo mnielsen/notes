@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Notes on the Dynabook</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h2>Notes on the Dynabook</h2>
+
+      <p>
+	Computing as envisioned circa 1960:
+      </p>
+
+      <p>
+	"The only surviving computing system paradigm seen by MIT
+	students and faculty was that of a very large International
+	Business Machine in a tightly sealed Computation Center: the
+	computer not as a <em>tool</em>, but as a <em>demigod</em>."
+	&ndash;
+	<a href="https://books.google.com/books?id=7HpQAAAAMAAJ">Wesley
+	Clark</a>.
+      </p>
+
+      <p class="slide">
+	<img src="assets/children.png" style="float: right;"></img>
+	Computing as envisioned in Alan
+	Kay's <a href="Dynabook.pdf">"A Personal Computer for Children
+	of All Ages"</a> (1972, what I'll call &ldquo;the Dynabook
+	paper&rdquo;):
+      </p>
+
+      <p class="slide">
+	Many of the ideas in the Dynabook paper now appear
+	commonplace, even banal.
+      </p>
+
+      <p class="slide">
+	That's because those ideas won.
+      </p>
+
+      <p class="slide">
+	At the time, this kind of thinking was a big change in
+	perspective from computers-as-demigods.
+      </p>
+
+      <p class="slide">
+	The Dynabook paper (and related work) was posing a fundamental
+	new question: what might personal computing for everyone be?
+      </p>
+
+      <p class="slide">
+	By facing squarely up to this (and some related) questions,
+	PARC invented much of the foundation for modern personal
+	computing. 
+      </p>
+      
+      <p style="opacity: 0.4;" class="slide">
+	Slides by <a href="http://michaelnielsen.org">Michael
+	Nielsen</a>, for a small-group discussion with people from the
+	<a href="http://recurse.com">Recurse Center</a>, December
+	2015.  The slides should be regarded as brief, rough and
+	very(!) incomplete working notes on a tiny, tiny slice of work
+	related to the Dynabook.
+      </p>
+      
+    </section>
+
+    <section class="slide">
+      <h2>What we're going to do</h2>
+
+      <p>
+	We're going to wallow in some of the ideas around the
+	Dynabook.  Not a collection of facts, not about mastering
+	particular technologies and systems. Rather, about powerful,
+	generative questions and principles and intuitions.
+      </p>
+
+      <p class="slide">
+	Little point in memorizing these, or treating them as
+	Gospel. Better to engage deeply with them, fight back with our
+	own ideas, mash up and collide with other powerful ideas, use
+	as a crucible for ideas.  My belief is that we've barely begun
+	to develop many of these ideas.
+      </p>
+
+      <p class="slide">
+	As Kay puts
+	it: <a href="http://www.vpri.org/pdf/m2007007a_revolution.pdf">The
+	Real Computer Revolution Hasn't Happened Yet</a>.
+      </p>
+      
+      <p class="slide">
+	To that end: this is a conversation, not a monologue.  Ask
+	questions, point out connections, argue with me, Kay, and
+	everyone else.  Riff, riff, riff.
+      </p>
+      
+      <p class="slide">
+	There is no necessity for us to &ldquo;get through
+	everything&rdquo;.  The goal is to marinate in ideas, and to
+	distill out a changed understanding, not to make it to some
+	notional endpoint.
+      </p>
+
+    </section>
+
+    
+    <section class="slide">
+      <h2>Key Sources</h2>
+
+      <p>
+	<a href="Dynabook.pdf">A Personal Computer for Children of All Ages</a> (Kay, 1972)
+      </p>
+
+      <p>
+	<a href="Personal_Computing_1975.pdf">Personal Computing</a> (Kay, 1975)
+      </p>
+
+      <p>
+	<a href="micro.pdf">Microelectronics and the Personal Computer</a> (Kay, 1977)
+      </p>
+
+      <p>
+	<a href="pdm.pdf">personal dynamic media</a> (Kay and Goldberg, 1977)
+      </p>
+      
+      <p>
+	<a href="computers_networks_education.pdf">Computers, Networks and Education</a> (Kay, 1991)
+      </p>
+
+      <p>
+	<a href="early_history.pdf">The Early History of Smalltalk</a> (Kay, 1993)
+      </p>
+
+      <p>
+	<a href="http://www.vpri.org/pdf/m2007007a_revolution.pdf">The
+	Real Computer Revolution Hasn't Happened Yet</a> (Kay, 2007)
+      </p>
+
+    </section>
+
+    <section class="slide">
+      <h2>Are we building tools?  Or media?</h2>
+
+A distinction implicit in much of Kay's discussion is between building
+tools versus building a medium.  For instance:
+
+"What then is a personal computer?  One would hope that it would be
+both a medium for containing and expressing arbitrary symbolic
+notions, and also a collection of useful tools for manipulating these
+structures, with ways to add new tools to the repertoire."
+
+There's a useful distinction here.
+
+Tools solve very specific problems.  
+
+Cut-and-paste is a tool.  Fill patterns are a tool.
+
+A medium is a platform for a type of creative expression.  You can
+imagine carrying out a meaningful creative project within a given
+medium.  
+
+Photoshop is a medium; Microsoft Word is a medium; the web browser
+(HTML + CSS + JS + <em>etc</em>) is a medium.
+
+The distinguishing question seems to be: can you imagine building a
+significant creative project?  If yes, it's a medium.  If no, it's a
+tool.
+
+Tools are tremendously important.  But in the big picture it's
+arguably the media we create which matter.
+
+
+    <section class="slide">
+      <h2>Verbs and nouns</h2>
+
+      <p>
+	Kay: "We feel that a child is a &ldquo;verb&rdquo; rather than
+	a &ldquo;noun&rdquo"
+      </p>
+
+      <p class="slide">
+	This point of view is in opposition to the point of view taken
+	by educators (or by traditional media).
+      </p>
+
+      <p class="slide">
+	We &ldquo;educate&rdquo; people, that is, education is
+	something which someone well-informed &ldquo;does to&rdquo;
+	someone who is ignorant.  Those people are passive receptors,
+	things that are operated on by teachers.
+      </p>
+
+      <p class="slide">
+	Another point of view is that people educate themselves.  The
+	most anyone can do is create enabling circumstances.
+      </p>
+
+      <p class="slide">
+	Even without taking a point of view on this, an interesting
+	thing about personal computers is that they can provide a
+	structured, responsive environment for individual exploration.
+	That's difficult in traditional classrooms.  And so it creates
+	an interesting possibility.
+      </p>
+      
+    </section>
+
+    <section class="slide">
+      
+
+          His question: what is the carrying capacity of computers for
+      ideas?  Let's considera variant question: what is the carrying
+      capacity of computers for discovery?  Tools like Mathematica and
+      AutoCad have helped us imagine things which are otherwise
+      impossible.
+
+    </section>
+
+    
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
